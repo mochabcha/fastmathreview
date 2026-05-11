@@ -1,0 +1,39 @@
+{
+  "title": "Grade 4 FAST Reference Sheet",
+  "groups": [
+    {
+      "id": "customary-conversions",
+      "title": "Customary Conversions",
+      "items": [
+        "1 foot = 12 inches",
+        "1 yard = 3 feet",
+        "1 pint = 2 cups",
+        "1 quart = 2 pints",
+        "1 gallon = 4 quarts",
+        "1 pound = 16 ounces"
+      ]
+    },
+    {
+      "id": "metric-conversions",
+      "title": "Metric Conversions",
+      "items": [
+        "1 meter = 100 centimeters",
+        "1 meter = 1000 millimeters",
+        "1 kilometer = 1000 meters",
+        "1 liter = 1000 milliliters",
+        "1 kilogram = 1000 grams",
+        "1 gram = 1000 milligrams"
+      ]
+    },
+    {
+      "id": "formulas-time",
+      "title": "Formulas and Time",
+      "items": [
+        "1 minute = 60 seconds",
+        "1 hour = 60 minutes",
+        "Rectangle perimeter: P = l + l + w + w",
+        "Rectangle area: A = l × w"
+      ]
+    }
+  ]
+}

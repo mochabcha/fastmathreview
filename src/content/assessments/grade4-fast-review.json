@@ -1,0 +1,799 @@
+{
+  "id": "grade4-fast-review",
+  "title": "Grade 4 Florida FAST Math Review",
+  "subtitle": "50 original practice questions aligned to Florida Grade 4 B.E.S.T. Mathematics Standards.",
+  "sourceNote": "This review is modeled after Florida FAST sample item formats and mapped to Grade 4 benchmark codes.",
+  "questions": [
+    {
+      "id": "q1",
+      "sequence": 1,
+      "standardId": "MA.4.NSO.1.1",
+      "type": "single",
+      "prompt": "The digit 6 in 462,018 moves one place to the left to make 642,018. How did the value of the 6 change?",
+      "explanation": "Moving one place left makes a digit worth 10 times as much.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "Its value changed from 6,000 to 60,000, so it became 10 times as great." },
+        { "id": "B", "content": "Its value changed from 60,000 to 600,000, so it became 10 times as great." },
+        { "id": "C", "content": "Its value changed from 600,000 to 60,000, so it became 10 times as small." },
+        { "id": "D", "content": "Its value stayed 60,000 because the digit did not change." }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q2",
+      "sequence": 2,
+      "standardId": "MA.4.NSO.1.2",
+      "type": "single",
+      "prompt": "A school library has four hundred eight thousand, thirty-six books in its records. Which shows this number in standard form?",
+      "explanation": "Four hundred eight thousand, thirty-six is 408,036.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "48,036" },
+        { "id": "B", "content": "408,036" },
+        { "id": "C", "content": "480,306" },
+        { "id": "D", "content": "408,360" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q3",
+      "sequence": 3,
+      "standardId": "MA.4.NSO.1.3",
+      "type": "single",
+      "prompt": "Order the numbers from least to greatest: 608,412; 680,142; 608,241.",
+      "explanation": "Compare hundred-thousands, then ten-thousands, then the remaining place values.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "680,142, 608,412, 608,241" },
+        { "id": "B", "content": "608,412, 608,241, 680,142" },
+        { "id": "C", "content": "608,241, 608,412, 680,142" },
+        { "id": "D", "content": "608,241, 680,142, 608,412" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q4",
+      "sequence": 4,
+      "standardId": "MA.4.NSO.1.4",
+      "type": "single",
+      "prompt": "A fundraiser collected $7,648. Which number is 7,648 rounded to the nearest thousand?",
+      "explanation": "7,648 is closer to 8,000 than 7,000.",
+      "answerDisplay": "D",
+      "options": [
+        { "id": "A", "content": "7,000" },
+        { "id": "B", "content": "7,600" },
+        { "id": "C", "content": "7,650" },
+        { "id": "D", "content": "8,000" }
+      ],
+      "correctOptionIds": ["D"]
+    },
+    {
+      "id": "q5",
+      "sequence": 5,
+      "standardId": "MA.4.NSO.2.3",
+      "type": "value",
+      "prompt": "A bakery packs 24 muffins in each tray. It makes 36 trays. How many muffins does the bakery make?",
+      "explanation": "24 × 36 = 864.",
+      "answerDisplay": "864",
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["864"]
+      }
+    },
+    {
+      "id": "q6",
+      "sequence": 6,
+      "standardId": "MA.4.NSO.2.4",
+      "type": "value",
+      "prompt": "There are 1,386 pencils packed equally into 6 boxes. How many pencils are in each box? Write the quotient and remainder as a fraction if needed.",
+      "explanation": "1,386 ÷ 6 = 231.",
+      "answerDisplay": "231",
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["231"]
+      }
+    },
+    {
+      "id": "q7",
+      "sequence": 7,
+      "standardId": "MA.4.NSO.2.5",
+      "type": "single",
+      "prompt": "A teacher wants to estimate 418 × 29. Which estimate is most reasonable?",
+      "explanation": "418 is close to 400 and 29 is close to 30.",
+      "answerDisplay": "A",
+      "options": [
+        { "id": "A", "content": "400 × 30 = 12,000" },
+        { "id": "B", "content": "400 × 20 = 8,000" },
+        { "id": "C", "content": "500 × 30 = 15,000" },
+        { "id": "D", "content": "40 × 30 = 1,200" }
+      ],
+      "correctOptionIds": ["A"]
+    },
+    {
+      "id": "q8",
+      "sequence": 8,
+      "standardId": "MA.4.AR.1.1",
+      "type": "single",
+      "prompt": "A club has 197 students going on buses. Each bus holds 8 students. What is the fewest number of buses needed?",
+      "explanation": "197 ÷ 8 = 24 remainder 5, so one more bus is needed.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "24" },
+        { "id": "B", "content": "25" },
+        { "id": "C", "content": "26" },
+        { "id": "D", "content": "27" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q9",
+      "sequence": 9,
+      "standardId": "MA.4.AR.1.1",
+      "type": "single",
+      "prompt": "A farmer puts 734 oranges into bags of 9. How many full bags can the farmer make?",
+      "explanation": "734 ÷ 9 = 81 remainder 5, and the context asks for full bags only.",
+      "answerDisplay": "A",
+      "options": [
+        { "id": "A", "content": "81" },
+        { "id": "B", "content": "81 R5" },
+        { "id": "C", "content": "82" },
+        { "id": "D", "content": "83" }
+      ],
+      "correctOptionIds": ["A"]
+    },
+    {
+      "id": "q10",
+      "sequence": 10,
+      "standardId": "MA.4.AR.2.1",
+      "type": "single",
+      "prompt": "Part A: Is the equation true or false? 7 × 8 = 14 × 4. Part B: Which statement explains your answer?",
+      "explanation": "7 × 8 = 56 and 14 × 4 = 56.",
+      "answerDisplay": "A",
+      "options": [
+        { "id": "A", "content": "True, because both sides equal 56." },
+        { "id": "B", "content": "False, because 14 × 4 is 42." },
+        { "id": "C", "content": "False, because 7 × 8 is twice as much as 14 × 4." },
+        { "id": "D", "content": "True, because 7 + 8 = 14 + 4." }
+      ]
+      ,
+      "correctOptionIds": ["A"]
+    },
+    {
+      "id": "q11",
+      "sequence": 11,
+      "standardId": "MA.4.AR.2.2",
+      "type": "single",
+      "prompt": "A movie theater sold 9 equal-price tickets for $108 total. Which equation can be used to find t, the price of each ticket?",
+      "explanation": "9 groups of t dollars total 108 dollars.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "9 + t = 108" },
+        { "id": "B", "content": "108 = 9 × t" },
+        { "id": "C", "content": "t - 9 = 108" },
+        { "id": "D", "content": "108 × 9 = t" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q12",
+      "sequence": 12,
+      "standardId": "MA.4.AR.2.2",
+      "type": "single",
+      "prompt": "Twelve teams share 96 water bottles equally. Which equation and solution correctly find b, the number of bottles per team?",
+      "explanation": "96 ÷ 12 = 8, so the equation is 12 × b = 96 and b = 8.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "96 + b = 12, so b = 84" },
+        { "id": "B", "content": "12 × b = 96, so b = 8" },
+        { "id": "C", "content": "12 + b = 96, so b = 108" },
+        { "id": "D", "content": "96 ÷ b = 12, so b = 12" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q13",
+      "sequence": 13,
+      "standardId": "MA.4.AR.3.1",
+      "type": "multi",
+      "prompt": "Select all the factor pairs of 48.",
+      "explanation": "1 × 48, 2 × 24, 3 × 16, and 6 × 8 equal 48, but 4 × 14 = 56.",
+      "answerDisplay": "A, B, C, E",
+      "options": [
+        { "id": "A", "content": "1 and 48" },
+        { "id": "B", "content": "2 and 24" },
+        { "id": "C", "content": "3 and 16" },
+        { "id": "D", "content": "4 and 14" },
+        { "id": "E", "content": "6 and 8" }
+      ],
+      "correctOptionIds": ["A", "B", "C", "E"]
+    },
+    {
+      "id": "q14",
+      "sequence": 14,
+      "standardId": "MA.4.AR.3.1",
+      "type": "single",
+      "prompt": "Which number is prime?",
+      "explanation": "29 has exactly two factors: 1 and 29.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "1" },
+        { "id": "B", "content": "21" },
+        { "id": "C", "content": "29" },
+        { "id": "D", "content": "45" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q15",
+      "sequence": 15,
+      "standardId": "MA.4.AR.3.2",
+      "type": "single",
+      "prompt": "A pattern follows the rule add 17, starting at 9. Which list shows the next four numbers after 9?",
+      "explanation": "Add 17 each time.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "17, 34, 51, 68" },
+        { "id": "B", "content": "26, 42, 59, 76" },
+        { "id": "C", "content": "26, 43, 60, 77" },
+        { "id": "D", "content": "27, 44, 61, 78" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q16",
+      "sequence": 16,
+      "standardId": "MA.4.AR.3.2",
+      "type": "single",
+      "prompt": "A ticket line pattern is 6, 18, 54, 162. Which rule describes the pattern?",
+      "explanation": "Each term is 3 times the term before it.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "Add 12" },
+        { "id": "B", "content": "Add 18" },
+        { "id": "C", "content": "Multiply by 3" },
+        { "id": "D", "content": "Multiply by 6" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q17",
+      "sequence": 17,
+      "standardId": "MA.4.NSO.2.2",
+      "type": "single",
+      "prompt": "A store orders 128 cases of juice. Each case has 24 bottles. Which expression shows a place-value way to find the total bottles?",
+      "explanation": "24 = 20 + 4, so 128 × 24 = (128 × 20) + (128 × 4).",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "(100 × 20) + (20 × 4) + (8 × 4)" },
+        { "id": "B", "content": "(128 × 20) + (128 × 4)" },
+        { "id": "C", "content": "(128 + 20) × 4" },
+        { "id": "D", "content": "128 + 24" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q18",
+      "sequence": 18,
+      "standardId": "MA.4.NSO.1.5",
+      "type": "single",
+      "prompt": "Part A: Choose the correct comparison. 5.07 ___ 5.7. Part B: Choose the statement that explains it.",
+      "explanation": "5.7 = 5.70, and 5.07 is less than 5.70.",
+      "answerDisplay": "A",
+      "options": [
+        { "id": "A", "content": "5.07 < 5.7, because 7 hundredths is less than 7 tenths." },
+        { "id": "B", "content": "5.07 > 5.7, because 7 hundredths is greater than 7 tenths." },
+        { "id": "C", "content": "5.07 = 5.7, because both numbers use 7." },
+        { "id": "D", "content": "5.07 > 5.7, because hundredths are larger than tenths." }
+      ]
+      ,
+      "correctOptionIds": ["A"]
+    },
+    {
+      "id": "q19",
+      "sequence": 19,
+      "standardId": "MA.4.NSO.2.6",
+      "type": "value",
+      "prompt": "What number is one-hundredth more than 43.58?",
+      "explanation": "Add 0.01.",
+      "answerDisplay": "43.59",
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["43.59"]
+      }
+    },
+    {
+      "id": "q20",
+      "sequence": 20,
+      "standardId": "MA.4.NSO.2.6",
+      "type": "value",
+      "prompt": "What number is one-tenth less than 8.04?",
+      "explanation": "Subtract 0.10 from 8.04.",
+      "answerDisplay": "7.94",
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["7.94"]
+      }
+    },
+    {
+      "id": "q21",
+      "sequence": 21,
+      "standardId": "MA.4.NSO.2.7",
+      "type": "single",
+      "prompt": "Jada spent $18.45 on a shirt and $7.38 on socks. How much did she spend in all?",
+      "explanation": "18.45 + 7.38 = 25.83.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "$25.73" },
+        { "id": "B", "content": "$25.83" },
+        { "id": "C", "content": "$26.73" },
+        { "id": "D", "content": "$26.83" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q22",
+      "sequence": 22,
+      "standardId": "MA.4.M.2.2",
+      "type": "single",
+      "prompt": "A sandwich costs $6.75. A drink costs $1.89. Malik gives the cashier $10.00. How much change should he receive?",
+      "explanation": "6.75 + 1.89 = 8.64, and 10.00 - 8.64 = 1.36.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "$1.26" },
+        { "id": "B", "content": "$1.36" },
+        { "id": "C", "content": "$1.46" },
+        { "id": "D", "content": "$8.64" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q23",
+      "sequence": 23,
+      "standardId": "MA.4.FR.1.1",
+      "type": "single",
+      "prompt": "Which fraction is equivalent to 7/10?",
+      "explanation": "Multiply numerator and denominator by 10.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "7/100" },
+        { "id": "B", "content": "70/100" },
+        { "id": "C", "content": "17/100" },
+        { "id": "D", "content": "107/100" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q24",
+      "sequence": 24,
+      "standardId": "MA.4.FR.1.2",
+      "type": "single",
+      "prompt": "Match each decimal with an equivalent fraction.",
+      "contextLines": ["0.4", "0.04", "1.25"],
+      "explanation": "Decimals to tenths and hundredths match denominators of 10 or 100.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "0.4 → 4/100; 0.04 → 4/10; 1.25 → 25/10" },
+        { "id": "B", "content": "0.4 → 4/10; 0.04 → 25/10; 1.25 → 4/100" },
+        { "id": "C", "content": "0.4 → 4/10; 0.04 → 4/100; 1.25 → 1 25/100" },
+        { "id": "D", "content": "0.4 → 1 25/100; 0.04 → 4/10; 1.25 → 4/100" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q25",
+      "sequence": 25,
+      "standardId": "MA.4.FR.1.3",
+      "type": "single",
+      "prompt": "A student makes an equivalent fraction by multiplying 3/5 by 4/4. What fraction is created?",
+      "explanation": "3 × 4 = 12 and 5 × 4 = 20.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "7/9" },
+        { "id": "B", "content": "12/20" },
+        { "id": "C", "content": "12/5" },
+        { "id": "D", "content": "3/20" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q26",
+      "sequence": 26,
+      "standardId": "MA.4.FR.1.3",
+      "type": "multi",
+      "prompt": "Select all fractions equivalent to 6/8.",
+      "explanation": "6/8 equals 3/4, 12/16, and 60/80.",
+      "answerDisplay": "A, B, D",
+      "options": [
+        { "id": "A", "content": "3/4" },
+        { "id": "B", "content": "12/16" },
+        { "id": "C", "content": "2/3" },
+        { "id": "D", "content": "60/80" },
+        { "id": "E", "content": "8/6" }
+      ],
+      "correctOptionIds": ["A", "B", "D"]
+    },
+    {
+      "id": "q27",
+      "sequence": 27,
+      "standardId": "MA.4.FR.1.4",
+      "type": "single",
+      "prompt": "Which comparison is true?",
+      "explanation": "5/8 is greater than 4/8, which equals 1/2.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "2/3 < 1/2" },
+        { "id": "B", "content": "3/4 > 5/6" },
+        { "id": "C", "content": "5/8 > 1/2" },
+        { "id": "D", "content": "4/5 = 4/10" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q28",
+      "sequence": 28,
+      "standardId": "MA.4.FR.1.4",
+      "type": "single",
+      "prompt": "Order the fractions from least to greatest: 1/4, 2/3, 3/8.",
+      "explanation": "1/4 = 0.25, 3/8 = 0.375, and 2/3 is about 0.67.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "3/8, 1/4, 2/3" },
+        { "id": "B", "content": "1/4, 3/8, 2/3" },
+        { "id": "C", "content": "2/3, 3/8, 1/4" },
+        { "id": "D", "content": "1/4, 2/3, 3/8" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q29",
+      "sequence": 29,
+      "standardId": "MA.4.FR.2.1",
+      "type": "multi",
+      "prompt": "Select all decompositions of 9/8.",
+      "explanation": "Each selected sum equals 9/8.",
+      "answerDisplay": "A, B, C, E",
+      "options": [
+        { "id": "A", "content": "8/8 + 1/8" },
+        { "id": "B", "content": "3/8 + 3/8 + 3/8" },
+        { "id": "C", "content": "4/8 + 5/8" },
+        { "id": "D", "content": "9/4 + 9/4" },
+        { "id": "E", "content": "1/8 + 1/8 + 7/8" }
+      ],
+      "correctOptionIds": ["A", "B", "C", "E"]
+    },
+    {
+      "id": "q30",
+      "sequence": 30,
+      "standardId": "MA.4.FR.2.2",
+      "type": "value",
+      "prompt": "What is 2 5/6 - 1 2/6?",
+      "explanation": "Subtract wholes and sixths: 2 - 1 = 1 and 5/6 - 2/6 = 3/6.",
+      "answerDisplay": "1 3/6",
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["1 3/6", "1 1/2", "1.5"]
+      }
+    },
+    {
+      "id": "q31",
+      "sequence": 31,
+      "standardId": "MA.4.FR.2.2",
+      "type": "single",
+      "prompt": "Maya walked 3 7/10 miles on Monday and 1 4/10 miles on Tuesday. How many miles did she walk altogether?",
+      "explanation": "3 7/10 + 1 4/10 = 4 11/10 = 5 1/10.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "4 1/10" },
+        { "id": "B", "content": "4 11/10" },
+        { "id": "C", "content": "5 1/10" },
+        { "id": "D", "content": "5 11/10" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q32",
+      "sequence": 32,
+      "standardId": "MA.4.FR.2.3",
+      "type": "single",
+      "prompt": "What is 6/10 + 7/100?",
+      "explanation": "6/10 = 60/100, so 60/100 + 7/100 = 67/100.",
+      "answerDisplay": "C",
+      "options": [
+        { "id": "A", "content": "13/110" },
+        { "id": "B", "content": "13/100" },
+        { "id": "C", "content": "67/100" },
+        { "id": "D", "content": "76/100" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q33",
+      "sequence": 33,
+      "standardId": "MA.4.FR.2.4",
+      "type": "multi",
+      "prompt": "A recipe uses 3/8 cup of honey for one batch. Which expressions show the amount for 4 batches?",
+      "explanation": "All selected expressions represent four groups of 3/8.",
+      "answerDisplay": "A, B, C, E",
+      "options": [
+        { "id": "A", "content": "4 × 3/8" },
+        { "id": "B", "content": "3/8 + 3/8 + 3/8 + 3/8" },
+        { "id": "C", "content": "3/8 × 4" },
+        { "id": "D", "content": "4 + 3/8" },
+        { "id": "E", "content": "12/8" }
+      ],
+      "correctOptionIds": ["A", "B", "C", "E"]
+    },
+    {
+      "id": "q34",
+      "sequence": 34,
+      "standardId": "MA.4.AR.1.3",
+      "type": "single",
+      "prompt": "A ribbon piece is 2/5 yard long. Nia cuts 6 equal pieces that length. What total length of ribbon does she cut?",
+      "explanation": "6 × 2/5 = 12/5 yards.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "8/5 yards" },
+        { "id": "B", "content": "12/5 yards" },
+        { "id": "C", "content": "12/30 yards" },
+        { "id": "D", "content": "6/10 yards" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q35",
+      "sequence": 35,
+      "standardId": "MA.4.M.1.1",
+      "type": "single",
+      "prompt": "Which tool is best for measuring the weight of a watermelon?",
+      "explanation": "A scale measures weight.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "ruler" },
+        { "id": "B", "content": "balance scale" },
+        { "id": "C", "content": "thermometer" },
+        { "id": "D", "content": "measuring cup" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q36",
+      "sequence": 36,
+      "standardId": "MA.4.M.1.2",
+      "type": "single",
+      "prompt": "A rope is 4 yards long. How many feet long is the rope?",
+      "explanation": "1 yard = 3 feet, so 4 yards = 12 feet.",
+      "answerDisplay": "B",
+      "referenceGroupIds": ["customary-conversions"],
+      "options": [
+        { "id": "A", "content": "7 feet" },
+        { "id": "B", "content": "12 feet" },
+        { "id": "C", "content": "24 feet" },
+        { "id": "D", "content": "48 feet" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q37",
+      "sequence": 37,
+      "standardId": "MA.4.M.1.2",
+      "type": "value",
+      "prompt": "A pitcher holds 3 quarts of lemonade. How many cups does the pitcher hold?",
+      "explanation": "1 quart = 4 cups, so 3 quarts = 12 cups.",
+      "answerDisplay": "12",
+      "referenceGroupIds": ["customary-conversions"],
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["12", "12 cups"]
+      }
+    },
+    {
+      "id": "q38",
+      "sequence": 38,
+      "standardId": "MA.4.M.2.1",
+      "type": "single",
+      "prompt": "A bus leaves at 8:35 a.m. and arrives 1 hour 45 minutes later. What time does it arrive?",
+      "explanation": "8:35 + 1 hour = 9:35; +45 minutes = 10:20.",
+      "answerDisplay": "C",
+      "referenceGroupIds": ["formulas-time"],
+      "options": [
+        { "id": "A", "content": "9:20 a.m." },
+        { "id": "B", "content": "10:10 a.m." },
+        { "id": "C", "content": "10:20 a.m." },
+        { "id": "D", "content": "10:35 a.m." }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q39",
+      "sequence": 39,
+      "standardId": "MA.4.M.2.1",
+      "type": "value",
+      "prompt": "Lena walks 3/4 mile to the park and then 3/4 mile back home each day for 5 days. How many miles does she walk in all?",
+      "explanation": "Each day is 6/4 miles, and 5 days is 30/4 miles.",
+      "answerDisplay": "30/4 miles or 7 2/4 miles",
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["30/4", "30/4 miles", "7 2/4", "7 1/2", "7.5"]
+      }
+    },
+    {
+      "id": "q40",
+      "sequence": 40,
+      "standardId": "MA.4.GR.1.1",
+      "type": "multi",
+      "prompt": "Select all angle measures that are obtuse.",
+      "explanation": "Obtuse angles are greater than 90 degrees and less than 180 degrees.",
+      "answerDisplay": "C, D",
+      "options": [
+        { "id": "A", "content": "45 degrees" },
+        { "id": "B", "content": "90 degrees" },
+        { "id": "C", "content": "105 degrees" },
+        { "id": "D", "content": "179 degrees" },
+        { "id": "E", "content": "180 degrees" }
+      ],
+      "correctOptionIds": ["C", "D"]
+    },
+    {
+      "id": "q41",
+      "sequence": 41,
+      "standardId": "MA.4.GR.1.2",
+      "type": "single",
+      "prompt": "An angle is a little less than a right angle. Which is the best estimate?",
+      "explanation": "A right angle is 90 degrees, and 80 degrees is slightly less.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "30 degrees" },
+        { "id": "B", "content": "80 degrees" },
+        { "id": "C", "content": "120 degrees" },
+        { "id": "D", "content": "180 degrees" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q42",
+      "sequence": 42,
+      "standardId": "MA.4.GR.1.2",
+      "type": "value",
+      "prompt": "An angle is made of two smaller angles measuring 35 degrees and 48 degrees. What is the measure of the whole angle?",
+      "explanation": "35 + 48 = 83.",
+      "answerDisplay": "83 degrees",
+      "validation": {
+        "kind": "numeric",
+        "acceptableValues": ["83", "83 degrees"]
+      }
+    },
+    {
+      "id": "q43",
+      "sequence": 43,
+      "standardId": "MA.4.GR.1.3",
+      "type": "single",
+      "prompt": "A 140-degree angle is split into two angles. One angle is 65 degrees. Which equation finds x, the other angle?",
+      "explanation": "The two parts add to the whole angle.",
+      "answerDisplay": "A",
+      "options": [
+        { "id": "A", "content": "x + 65 = 140" },
+        { "id": "B", "content": "x - 65 = 140" },
+        { "id": "C", "content": "65 × x = 140" },
+        { "id": "D", "content": "140 + 65 = x" }
+      ],
+      "correctOptionIds": ["A"]
+    },
+    {
+      "id": "q44",
+      "sequence": 44,
+      "standardId": "MA.4.GR.2.1",
+      "type": "single",
+      "prompt": "A rectangle has a length of 14 feet and a width of 6 feet. Which answer gives both its area and perimeter?",
+      "explanation": "Area = 14 × 6 = 84 square feet. Perimeter = 14 + 14 + 6 + 6 = 40 feet.",
+      "answerDisplay": "C",
+      "referenceGroupIds": ["formulas-time"],
+      "options": [
+        { "id": "A", "content": "Area 20 square feet; perimeter 84 feet" },
+        { "id": "B", "content": "Area 40 square feet; perimeter 84 feet" },
+        { "id": "C", "content": "Area 84 square feet; perimeter 40 feet" },
+        { "id": "D", "content": "Area 84 square feet; perimeter 20 feet" }
+      ],
+      "correctOptionIds": ["C"]
+    },
+    {
+      "id": "q45",
+      "sequence": 45,
+      "standardId": "MA.4.GR.2.1",
+      "type": "single",
+      "prompt": "A rectangle has an area of 72 square inches and a width of 8 inches. What is its length?",
+      "explanation": "72 ÷ 8 = 9.",
+      "answerDisplay": "B",
+      "referenceGroupIds": ["formulas-time"],
+      "options": [
+        { "id": "A", "content": "8 inches" },
+        { "id": "B", "content": "9 inches" },
+        { "id": "C", "content": "64 inches" },
+        { "id": "D", "content": "80 inches" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q46",
+      "sequence": 46,
+      "standardId": "MA.4.GR.2.2",
+      "type": "single",
+      "prompt": "Rectangle A is 3 inches by 8 inches. Rectangle B has the same area but a different perimeter. Which side lengths could Rectangle B have?",
+      "explanation": "Both rectangles must have area 24 square inches. A 4-by-6 rectangle has the same area but a different perimeter.",
+      "answerDisplay": "B",
+      "referenceGroupIds": ["formulas-time"],
+      "options": [
+        { "id": "A", "content": "3 inches by 8 inches" },
+        { "id": "B", "content": "4 inches by 6 inches" },
+        { "id": "C", "content": "2 inches by 10 inches" },
+        { "id": "D", "content": "1 inch by 12 inches" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q47",
+      "sequence": 47,
+      "standardId": "MA.4.GR.2.2",
+      "type": "single",
+      "prompt": "A rectangle has perimeter 20 feet and area 24 square feet. Which side lengths describe a different rectangle with the same perimeter but a different area?",
+      "explanation": "1 + 1 + 9 + 9 = 20 and area is 9, or 2 + 2 + 8 + 8 = 20 and area is 16.",
+      "answerDisplay": "A",
+      "referenceGroupIds": ["formulas-time"],
+      "options": [
+        { "id": "A", "content": "1 foot by 9 feet" },
+        { "id": "B", "content": "4 feet by 6 feet" },
+        { "id": "C", "content": "3 feet by 7 feet" },
+        { "id": "D", "content": "5 feet by 5 feet" }
+      ],
+      "correctOptionIds": ["A"]
+    },
+    {
+      "id": "q48",
+      "sequence": 48,
+      "standardId": "MA.4.DP.1.1",
+      "type": "single",
+      "prompt": "A class records plant heights in inches: 5, 7, 7, 8, 9, 9, 9. Which display would best show how often each height occurs?",
+      "explanation": "A line plot can show the frequency of each numerical value.",
+      "answerDisplay": "A",
+      "options": [
+        { "id": "A", "content": "line plot" },
+        { "id": "B", "content": "clock" },
+        { "id": "C", "content": "protractor" },
+        { "id": "D", "content": "multiplication table" }
+      ],
+      "correctOptionIds": ["A"]
+    },
+    {
+      "id": "q49",
+      "sequence": 49,
+      "standardId": "MA.4.DP.1.2",
+      "type": "single",
+      "prompt": "The numbers of books read by seven students are 4, 6, 6, 8, 9, 10, 12. Which answer gives the mode, median, and range?",
+      "explanation": "Mode appears most, median is the middle value of seven values, and range is 12 - 4.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "Mode 8, median 6, range 6" },
+        { "id": "B", "content": "Mode 6, median 8, range 8" },
+        { "id": "C", "content": "Mode 6, median 9, range 12" },
+        { "id": "D", "content": "Mode 4, median 8, range 9" }
+      ],
+      "correctOptionIds": ["B"]
+    },
+    {
+      "id": "q50",
+      "sequence": 50,
+      "standardId": "MA.4.DP.1.3",
+      "type": "single",
+      "prompt": "A line plot shows trail distances: 1/2 mile: 3 hikers; 1 mile: 5 hikers; 1 1/2 miles: 2 hikers. What fraction of the hikers walked less than 1 mile?",
+      "explanation": "3 out of 10 hikers walked 1/2 mile, which is less than 1 mile.",
+      "answerDisplay": "B",
+      "options": [
+        { "id": "A", "content": "2/10" },
+        { "id": "B", "content": "3/10" },
+        { "id": "C", "content": "5/10" },
+        { "id": "D", "content": "8/10" }
+      ],
+      "correctOptionIds": ["B"]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "whole-number-place-value",
+    "title": "Place value and multiplication by 10",
+    "href": "https://www.youtube.com/watch?v=Ehd3cgRBvl0",
+    "provider": "YouTube",
+    "summary": "Use place value shifts to explain why digits become ten times as large when they move left.",
+    "matchPrefixes": ["MA.4.NSO.1.1", "MA.4.NSO.1.2", "MA.4.NSO.1.3", "MA.4.NSO.1.4"],
+    "videos": [
+      { "id": "place-value-1", "title": "Place value when multiplying and dividing by 10", "youtubeId": "Ehd3cgRBvl0" },
+      { "id": "place-value-2", "title": "Introduction to place value", "youtubeId": "wx2gI8iwMCA" }
+    ]
+  },
+  {
+    "id": "whole-number-operations",
+    "title": "Multi-digit multiplication and division structure",
+    "href": "https://www.youtube.com/watch?v=NuIDwPQLJmk",
+    "provider": "YouTube",
+    "summary": "Break large whole-number operations into place-value parts, equal groups, and equations.",
+    "matchPrefixes": ["MA.4.NSO.2.", "MA.4.AR.1.1", "MA.4.AR.2.1", "MA.4.AR.2.2", "MA.4.AR.3."],
+    "videos": [
+      { "id": "ops-1", "title": "Introduction to standard way of multiplying multidigit numbers", "youtubeId": "NuIDwPQLJmk" },
+      { "id": "ops-2", "title": "Multiplying 1-digit numbers by multiples of 10, 100, and 1000", "youtubeId": "Ehd3cgRBvl0" }
+    ]
+  },
+  {
+    "id": "fractions-equivalent",
+    "title": "Equivalent fractions and comparison",
+    "href": "https://www.youtube.com/watch?v=8VjhtS3KlOY",
+    "provider": "YouTube",
+    "summary": "Rewrite fractions so the pieces match, then compare or order them using equal-size parts.",
+    "matchPrefixes": ["MA.4.FR.1.1", "MA.4.FR.1.2", "MA.4.FR.1.3", "MA.4.FR.1.4", "MA.4.FR.2.1"],
+    "videos": [
+      { "id": "frac-1", "title": "Equivalent fractions and different wholes", "youtubeId": "8VjhtS3KlOY" },
+      { "id": "frac-2", "title": "Equivalent fractions", "youtubeId": "U2ovEuEUxXQ" }
+    ]
+  },
+  {
+    "id": "fractions-operations",
+    "title": "Adding, subtracting, and scaling fractions",
+    "href": "https://www.youtube.com/watch?v=4LvGU1a9Z5Q",
+    "provider": "YouTube",
+    "summary": "Translate a fraction situation into repeated groups or like-denominator addition and subtraction.",
+    "matchPrefixes": ["MA.4.FR.2.2", "MA.4.FR.2.3", "MA.4.FR.2.4", "MA.4.AR.1.2", "MA.4.AR.1.3"],
+    "videos": [
+      { "id": "frac-ops-1", "title": "Rewriting fractions as decimals", "youtubeId": "4LvGU1a9Z5Q" },
+      { "id": "frac-ops-2", "title": "Adding and subtracting fractions", "youtubeId": "gZzsYhyjIXA" }
+    ]
+  },
+  {
+    "id": "decimals",
+    "title": "Decimals and place-value comparisons",
+    "href": "https://www.youtube.com/watch?v=EX9CdUAMpgE",
+    "provider": "YouTube",
+    "summary": "Compare tenths and hundredths by place value, then connect them to money and fraction models.",
+    "matchPrefixes": ["MA.4.NSO.1.5", "MA.4.NSO.2.6", "MA.4.NSO.2.7", "MA.4.M.2.2"],
+    "videos": [
+      { "id": "dec-1", "title": "Comparing decimals example 1", "youtubeId": "EX9CdUAMpgE" },
+      { "id": "dec-2", "title": "Rewriting fractions as decimals", "youtubeId": "4LvGU1a9Z5Q" }
+    ]
+  },
+  {
+    "id": "measurement",
+    "title": "Conversions and elapsed time",
+    "href": "https://www.youtube.com/watch?v=eqKnx5Yk508",
+    "provider": "YouTube",
+    "summary": "Choose the correct unit, convert within the same system, and build elapsed time one chunk at a time.",
+    "matchPrefixes": ["MA.4.M.1.1", "MA.4.M.1.2", "MA.4.M.2.1"],
+    "videos": [
+      { "id": "meas-1", "title": "U.S. customary units: fluid volume", "youtubeId": "eqKnx5Yk508" },
+      { "id": "meas-2", "title": "Time word problem: puzzle", "youtubeId": "gZzsYhyjIXA" }
+    ]
+  },
+  {
+    "id": "angles",
+    "title": "Angle types and angle measure",
+    "href": "https://www.youtube.com/watch?v=ALhv3Rlydig",
+    "provider": "YouTube",
+    "summary": "Classify angles by size, measure them with a protractor, and add or subtract parts to find unknowns.",
+    "matchPrefixes": ["MA.4.GR.1.1", "MA.4.GR.1.2", "MA.4.GR.1.3"],
+    "videos": [
+      { "id": "angle-1", "title": "Acute, right, and obtuse angles", "youtubeId": "ALhv3Rlydig" },
+      { "id": "angle-2", "title": "Measuring angles using a protractor", "youtubeId": "dw41PMWek6U" },
+      { "id": "angle-3", "title": "Decomposing angles", "youtubeId": "uMj46crbLaw" }
+    ]
+  },
+  {
+    "id": "area-perimeter",
+    "title": "Area and perimeter",
+    "href": "https://www.youtube.com/watch?v=LoaBd-sPzkU",
+    "provider": "YouTube",
+    "summary": "Turn rectangle stories into formulas by identifying length, width, perimeter, and area.",
+    "matchPrefixes": ["MA.4.GR.2.1", "MA.4.GR.2.2"],
+    "videos": [
+      { "id": "area-1", "title": "Perimeter and area: the basics", "youtubeId": "LoaBd-sPzkU" },
+      { "id": "area-2", "title": "Area and perimeter of rectangles", "youtubeId": "LoaBd-sPzkU" }
+    ]
+  },
+  {
+    "id": "data-analysis",
+    "title": "Line plots and data summaries",
+    "href": "https://www.youtube.com/watch?v=Ocs3NUNhhPk",
+    "provider": "YouTube",
+    "summary": "Read a data display, count how many values fit a condition, and identify the center or spread requested.",
+    "matchPrefixes": ["MA.4.DP.1.1", "MA.4.DP.1.2", "MA.4.DP.1.3"],
+    "videos": [
+      { "id": "data-1", "title": "Line plots with fractions", "youtubeId": "Ocs3NUNhhPk" },
+      { "id": "data-2", "title": "Read line plots", "youtubeId": "Ocs3NUNhhPk" }
+    ]
+  }
+]

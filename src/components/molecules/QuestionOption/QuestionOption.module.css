@@ -1,0 +1,87 @@
+.option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  width: 100%;
+  padding: 0.95rem 0.4rem;
+  border: 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  background: transparent;
+  color: var(--color-ink);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    transform 120ms ease;
+}
+
+.option:hover {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--color-accent) 10%, white),
+    color-mix(in oklab, var(--color-pop) 7%, white)
+  );
+}
+
+.selected {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--color-accent) 16%, white),
+    color-mix(in oklab, var(--color-pop) 10%, white)
+  );
+  color: var(--color-ink);
+  transform: translateX(0.2rem);
+}
+
+.label {
+  display: inline-grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  background: transparent;
+  color: var(--color-ink-soft);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.selected .label {
+  border-color: var(--color-accent-strong);
+  background: color-mix(in oklab, var(--color-sun) 52%, white);
+  color: var(--color-ink);
+}
+
+.content {
+  font-size: var(--text-md);
+  line-height: var(--leading-copy);
+}
+
+@media (max-width: 900px) {
+  .option {
+    gap: 0.7rem;
+    padding: 0.8rem 0.2rem;
+  }
+
+  .label {
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 0.76rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 520px), (max-height: 820px) {
+  .option {
+    padding-block: 0.72rem;
+  }
+
+  .content {
+    font-size: 0.92rem;
+  }
+}

@@ -1,0 +1,17 @@
+.surface {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.default {
+  background: color-mix(in oklab, var(--color-surface) 88%, white);
+}
+
+.tint {
+  background: color-mix(in oklab, var(--color-surface-tint) 92%, white);
+}
+
+.strong {
+  background: color-mix(in oklab, var(--color-surface-strong) 92%, white);
+}

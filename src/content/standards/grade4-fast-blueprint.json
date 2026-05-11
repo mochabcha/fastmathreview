@@ -1,0 +1,23 @@
+[
+  {
+    "id": "whole-number-algebra",
+    "title": "Number Sense and Operations with Whole Numbers",
+    "shortTitle": "Whole Numbers",
+    "benchmarkShare": "31-37%",
+    "description": "Place value, multi-digit operations, equations, factors, and numerical patterns."
+  },
+  {
+    "id": "fractions-decimals",
+    "title": "Number Sense and Operations with Fractions and Decimals",
+    "shortTitle": "Fractions and Decimals",
+    "benchmarkShare": "31-37%",
+    "description": "Equivalent fractions, mixed numbers, decimal reasoning, and fraction operations in context."
+  },
+  {
+    "id": "geometry-measurement-data",
+    "title": "Geometric Reasoning, Measurement, and Data Analysis and Probability",
+    "shortTitle": "Geometry, Measurement, Data",
+    "benchmarkShare": "31-37%",
+    "description": "Angles, rectangle formulas, measurement conversion, elapsed time, and line-plot style reasoning."
+  }
+]

@@ -1,0 +1,275 @@
+[
+  {
+    "id": "MA.4.NSO.1.1",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Place value shifts",
+    "summary": "Explain how a digit changes value when it moves left or right in a multi-digit number."
+  },
+  {
+    "id": "MA.4.NSO.1.2",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Read and write whole numbers",
+    "summary": "Write whole numbers to 1,000,000 in standard, expanded, and word form."
+  },
+  {
+    "id": "MA.4.NSO.1.3",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Compare and order whole numbers",
+    "summary": "Plot, compare, and order multi-digit whole numbers up to 1,000,000."
+  },
+  {
+    "id": "MA.4.NSO.1.4",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Round whole numbers",
+    "summary": "Round whole numbers to the nearest 10, 100, or 1,000."
+  },
+  {
+    "id": "MA.4.NSO.1.5",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Compare and order decimals",
+    "summary": "Plot, compare, and order decimals through the hundredths place."
+  },
+  {
+    "id": "MA.4.NSO.2.1",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Multiplication facts and related division facts",
+    "summary": "Recall multiplication facts through 12 and use the related division facts with automaticity."
+  },
+  {
+    "id": "MA.4.NSO.2.2",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Use place value to multiply",
+    "summary": "Use place-value reasoning and partial products to represent multi-digit multiplication."
+  },
+  {
+    "id": "MA.4.NSO.2.3",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Multiply multi-digit whole numbers",
+    "summary": "Multiply whole numbers up to two digits by two digits with procedural fluency."
+  },
+  {
+    "id": "MA.4.NSO.2.4",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Divide with remainders",
+    "summary": "Divide whole numbers and express remainders in context, including as fractions when appropriate."
+  },
+  {
+    "id": "MA.4.NSO.2.5",
+    "strand": "Number Sense and Operations",
+    "categoryId": "whole-number-algebra",
+    "title": "Estimate products and quotients",
+    "summary": "Use place value and reasoning to estimate multiplication and division results."
+  },
+  {
+    "id": "MA.4.NSO.2.6",
+    "strand": "Number Sense and Operations",
+    "categoryId": "fractions-decimals",
+    "title": "Decimal tenths and hundredths",
+    "summary": "Reason about adding or subtracting tenths and hundredths from decimal numbers."
+  },
+  {
+    "id": "MA.4.NSO.2.7",
+    "strand": "Number Sense and Operations",
+    "categoryId": "fractions-decimals",
+    "title": "Add and subtract decimals",
+    "summary": "Add and subtract decimals to the hundredths place in real-world situations."
+  },
+  {
+    "id": "MA.4.AR.1.1",
+    "strand": "Algebraic Reasoning",
+    "categoryId": "whole-number-algebra",
+    "title": "Whole-number multiplication and division problems",
+    "summary": "Solve real-world multiplication and division problems, including interpreting remainders."
+  },
+  {
+    "id": "MA.4.AR.1.2",
+    "strand": "Algebraic Reasoning",
+    "categoryId": "fractions-decimals",
+    "title": "Add and subtract fractions in context",
+    "summary": "Solve real-world problems involving addition and subtraction of fractions and mixed numbers with like denominators."
+  },
+  {
+    "id": "MA.4.AR.1.3",
+    "strand": "Algebraic Reasoning",
+    "categoryId": "fractions-decimals",
+    "title": "Multiply fractions by whole numbers",
+    "summary": "Solve real-world problems that multiply a fraction by a whole number or vice versa."
+  },
+  {
+    "id": "MA.4.AR.2.1",
+    "strand": "Algebraic Reasoning",
+    "categoryId": "whole-number-algebra",
+    "title": "True or false equations",
+    "summary": "Determine whether whole-number equations are true or false and explain why."
+  },
+  {
+    "id": "MA.4.AR.2.2",
+    "strand": "Algebraic Reasoning",
+    "categoryId": "whole-number-algebra",
+    "title": "Unknowns in equations",
+    "summary": "Write and solve multiplication or division equations with an unknown in any position."
+  },
+  {
+    "id": "MA.4.AR.3.1",
+    "strand": "Algebraic Reasoning",
+    "categoryId": "whole-number-algebra",
+    "title": "Factors, prime, and composite numbers",
+    "summary": "Find factor pairs and determine whether a number is prime, composite, or neither."
+  },
+  {
+    "id": "MA.4.AR.3.2",
+    "strand": "Algebraic Reasoning",
+    "categoryId": "whole-number-algebra",
+    "title": "Generate and describe patterns",
+    "summary": "Extend numerical patterns and identify the rule that creates them."
+  },
+  {
+    "id": "MA.4.FR.1.1",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Equivalent fractions and decimals",
+    "summary": "Represent tenths and hundredths as equivalent fractions or decimals."
+  },
+  {
+    "id": "MA.4.FR.1.2",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Match decimals to fractions",
+    "summary": "Relate decimals to fraction forms with denominators of 10 and 100."
+  },
+  {
+    "id": "MA.4.FR.1.3",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Generate equivalent fractions",
+    "summary": "Create and identify equivalent fractions using multiplication or division."
+  },
+  {
+    "id": "MA.4.FR.1.4",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Compare and order fractions",
+    "summary": "Compare and order fractions using benchmark fractions and equivalent values."
+  },
+  {
+    "id": "MA.4.FR.2.1",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Decompose fractions greater than one",
+    "summary": "Break fractions greater than one into sums of fractions with the same denominator."
+  },
+  {
+    "id": "MA.4.FR.2.2",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Add and subtract fractions and mixed numbers",
+    "summary": "Add or subtract fractions and mixed numbers with like denominators."
+  },
+  {
+    "id": "MA.4.FR.2.3",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Tenths and hundredths together",
+    "summary": "Add fractions written in tenths and hundredths by rewriting them as equivalent values."
+  },
+  {
+    "id": "MA.4.FR.2.4",
+    "strand": "Fractions",
+    "categoryId": "fractions-decimals",
+    "title": "Fraction multiplication expressions",
+    "summary": "Represent multiplying a fraction by a whole number with repeated addition and equations."
+  },
+  {
+    "id": "MA.4.M.1.1",
+    "strand": "Measurement",
+    "categoryId": "geometry-measurement-data",
+    "title": "Select a measurement tool",
+    "summary": "Choose the most appropriate tool to measure a given attribute."
+  },
+  {
+    "id": "MA.4.M.1.2",
+    "strand": "Measurement",
+    "categoryId": "geometry-measurement-data",
+    "title": "Convert within one measurement system",
+    "summary": "Convert units of length, weight, capacity, and time within the same measurement system."
+  },
+  {
+    "id": "MA.4.M.2.1",
+    "strand": "Measurement",
+    "categoryId": "geometry-measurement-data",
+    "title": "Elapsed time and measurement contexts",
+    "summary": "Solve real-world problems involving elapsed time and multi-step measurement situations."
+  },
+  {
+    "id": "MA.4.M.2.2",
+    "strand": "Measurement",
+    "categoryId": "fractions-decimals",
+    "title": "Money with decimals",
+    "summary": "Solve money problems using decimal addition and subtraction to the hundredths place."
+  },
+  {
+    "id": "MA.4.GR.1.1",
+    "strand": "Geometric Reasoning",
+    "categoryId": "geometry-measurement-data",
+    "title": "Classify angles",
+    "summary": "Identify acute, right, obtuse, straight, and reflex angles."
+  },
+  {
+    "id": "MA.4.GR.1.2",
+    "strand": "Geometric Reasoning",
+    "categoryId": "geometry-measurement-data",
+    "title": "Estimate and measure angles",
+    "summary": "Estimate, measure, and draw angles in whole-number degrees."
+  },
+  {
+    "id": "MA.4.GR.1.3",
+    "strand": "Geometric Reasoning",
+    "categoryId": "geometry-measurement-data",
+    "title": "Unknown angle measures",
+    "summary": "Solve angle problems by writing equations for unknown angle measures."
+  },
+  {
+    "id": "MA.4.GR.2.1",
+    "strand": "Geometric Reasoning",
+    "categoryId": "geometry-measurement-data",
+    "title": "Rectangle area and perimeter",
+    "summary": "Use formulas to find area and perimeter of rectangles and solve related problems."
+  },
+  {
+    "id": "MA.4.GR.2.2",
+    "strand": "Geometric Reasoning",
+    "categoryId": "geometry-measurement-data",
+    "title": "Compare rectangles with area and perimeter",
+    "summary": "Reason about rectangles that share an area or perimeter but not both."
+  },
+  {
+    "id": "MA.4.DP.1.1",
+    "strand": "Data Analysis and Probability",
+    "categoryId": "geometry-measurement-data",
+    "title": "Choose a data display",
+    "summary": "Select and interpret displays such as line plots for numerical data."
+  },
+  {
+    "id": "MA.4.DP.1.2",
+    "strand": "Data Analysis and Probability",
+    "categoryId": "geometry-measurement-data",
+    "title": "Describe center and spread",
+    "summary": "Determine mode, median, range, and other simple summaries of a data set."
+  },
+  {
+    "id": "MA.4.DP.1.3",
+    "strand": "Data Analysis and Probability",
+    "categoryId": "geometry-measurement-data",
+    "title": "Read fraction data from plots",
+    "summary": "Use data displays to reason about fractional parts of a group."
+  }
+]

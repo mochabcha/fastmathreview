@@ -1,0 +1,94 @@
+.workspace {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+  height: 100%;
+  gap: 0;
+}
+
+.promptBlock {
+  padding: 0 0 var(--space-6);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-border) 84%, white);
+  min-height: 0;
+}
+
+.prompt {
+  font-size: clamp(1.28rem, 1.35vw + 1rem, 1.85rem);
+  max-width: 32ch;
+}
+
+.contextList {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: var(--space-2);
+  color: var(--color-ink-soft);
+}
+
+.answerBlock {
+  min-height: 0;
+  padding-top: var(--space-5);
+  display: grid;
+  align-content: start;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.valueInput {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--color-surface) 86%, white);
+  padding: 1rem 1.1rem;
+  color: var(--color-ink);
+  font-size: clamp(1rem, 0.8vw + 0.95rem, 1.2rem);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 70%, transparent),
+    0 12px 24px color-mix(in oklab, var(--color-accent) 8%, transparent);
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-rows: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  }
+
+  .promptBlock {
+    padding-bottom: var(--space-4);
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .prompt {
+    font-size: clamp(1.08rem, 1.25rem + 0.35vw, 1.38rem);
+    max-width: 100%;
+  }
+
+  .contextList {
+    gap: 0.35rem;
+    font-size: 0.9rem;
+  }
+
+  .answerBlock {
+    padding-top: 0.8rem;
+  }
+
+  .valueInput {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px), (max-height: 820px) {
+  .workspace {
+    grid-template-rows: minmax(0, 0.38fr) minmax(0, 0.62fr);
+  }
+
+  .promptBlock {
+    padding-bottom: 0.7rem;
+  }
+
+  .prompt {
+    font-size: clamp(1rem, 1.08rem + 0.4vw, 1.24rem);
+  }
+}

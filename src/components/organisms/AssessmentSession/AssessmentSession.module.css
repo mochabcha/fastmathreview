@@ -1,0 +1,34 @@
+.controls {
+  padding: var(--space-5);
+}
+
+.controlsHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.toolbar {
+  margin-top: var(--space-4);
+  justify-content: space-between;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(19rem, 0.95fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (max-width: 1080px) {
+  .controlsHeader,
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

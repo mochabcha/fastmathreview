@@ -1,0 +1,23 @@
+.heading {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  color: var(--color-ink);
+  line-height: var(--leading-tight);
+}
+
+.sm {
+  font-size: var(--text-lg);
+}
+
+.md {
+  font-size: var(--text-xl);
+}
+
+.lg {
+  font-size: var(--text-2xl);
+}
+
+.hero {
+  font-size: var(--text-3xl);
+  max-width: 14ch;
+}

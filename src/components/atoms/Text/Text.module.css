@@ -1,0 +1,13 @@
+.text {
+  margin: 0;
+  font-size: var(--text-md);
+  line-height: var(--leading-copy);
+}
+
+.default {
+  color: var(--color-ink);
+}
+
+.soft {
+  color: var(--color-ink-soft);
+}

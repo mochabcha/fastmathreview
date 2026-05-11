@@ -1,0 +1,158 @@
+.backdropHidden,
+.backdropVisible {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  background: color-mix(in oklab, var(--color-ink) 22%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.backdropVisible {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 25;
+}
+
+.drawerClosed,
+.drawerOpen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(40rem, 48vw);
+  height: 100dvh;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--color-surface) 92%, white), color-mix(in oklab, var(--color-canvas) 88%, white)),
+    linear-gradient(135deg, color-mix(in oklab, var(--color-pop) 8%, transparent), transparent 48%);
+  border-left: 1px solid color-mix(in oklab, var(--color-border) 84%, white);
+  box-shadow: -24px 0 48px color-mix(in oklab, var(--color-ink) 18%, transparent);
+  transform: translateX(100%);
+  transition: transform 200ms ease;
+  z-index: 26;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 1rem 1rem 1.15rem;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.headerCopy {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.close {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink-soft);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.statusRail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--color-warning) 22%, white);
+  color: var(--color-ink);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.statusRail[data-state='correct'] {
+  background: color-mix(in oklab, var(--color-success) 18%, white);
+}
+
+.panel {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-radius: 1.2rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  background: color-mix(in oklab, var(--color-surface) 82%, white);
+  padding: 1rem;
+}
+
+.panelGrid,
+.videoPanel {
+  height: 100%;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.panelGrid {
+  grid-template-columns: 1fr;
+}
+
+.section {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.videoFrame {
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 84%, white);
+  background: color-mix(in oklab, var(--color-ink) 12%, black);
+  aspect-ratio: 16 / 9;
+}
+
+.videoFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.videoCaption {
+  display: grid;
+  gap: 0.2rem;
+}
+
+@media (max-width: 960px) {
+  .drawerClosed,
+  .drawerOpen {
+    width: 100vw;
+    padding: 0.85rem 0.85rem 1rem;
+    gap: 0.7rem;
+  }
+
+  .panel {
+    padding: 0.85rem;
+  }
+
+  .videoFrame {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 520px), (max-height: 820px) {
+  .drawerClosed,
+  .drawerOpen {
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+  }
+
+  .statusRail {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .panelGrid,
+  .videoPanel {
+    gap: 0.75rem;
+  }
+}

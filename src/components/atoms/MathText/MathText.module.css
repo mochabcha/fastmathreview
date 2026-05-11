@@ -1,0 +1,30 @@
+.mathText {
+  display: inline;
+}
+
+.fraction {
+  display: inline-grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-inline: 0.08em;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
+
+.fraction > span:first-child {
+  border-bottom: 1px solid currentColor;
+  padding-inline: 0.18em;
+  line-height: 1.05;
+}
+
+.fraction > span:last-child {
+  padding-inline: 0.18em;
+  line-height: 1.05;
+}
+
+.mixed {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18em;
+}

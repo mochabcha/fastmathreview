@@ -1,0 +1,78 @@
+.screen {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.center {
+  width: min(100%, 44rem);
+  padding: clamp(1.2rem, 2vw, 1.8rem);
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--color-surface) 90%, white), color-mix(in oklab, var(--color-canvas) 86%, white)),
+    linear-gradient(135deg, color-mix(in oklab, var(--color-pop) 10%, transparent), transparent 42%);
+  box-shadow: var(--shadow-soft);
+}
+
+.header {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.kicker {
+  color: var(--color-accent-strong);
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modeList {
+  display: grid;
+  border-top: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+}
+
+.modeButton {
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  background: transparent;
+  padding: 1.1rem 0.1rem;
+  cursor: pointer;
+  color: var(--color-ink);
+  transition:
+    background-color 120ms ease,
+    transform 120ms ease;
+}
+
+.modeButton:last-child {
+  border-bottom: 0;
+}
+
+.modeButton:hover {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--color-accent) 9%, white),
+    color-mix(in oklab, var(--color-sun) 12%, white)
+  );
+  transform: translateX(0.2rem);
+}
+
+.modeButton span {
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.modeButton small {
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+}
+
+.sourceNote {
+  max-width: 52ch;
+}
