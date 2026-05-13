@@ -76,6 +76,22 @@ export interface QuestionHelpEntry {
   guidedSteps?: GuidedStepPrompt[];
 }
 
+export type QuestionHelpEntryMap = Record<string, QuestionHelpEntry>;
+export type PartialQuestionHelpEntryMap = Record<string, Partial<QuestionHelpEntry>>;
+
+export interface KeywordCatalogEntry {
+  phrase: string;
+  rationale: string;
+}
+
+export interface OperationKeywordCatalog {
+  addition: KeywordCatalogEntry[];
+  subtraction: KeywordCatalogEntry[];
+  multiplication: KeywordCatalogEntry[];
+  division: KeywordCatalogEntry[];
+  equalGroups: KeywordCatalogEntry[];
+}
+
 export interface ChoiceOption {
   id: string;
   content: string;

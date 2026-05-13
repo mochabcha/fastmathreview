@@ -12,6 +12,7 @@ export default async function Page() {
           assessment={pageModel.assessment}
           standards={pageModel.standards}
           references={pageModel.references}
+          questionHelpEntries={pageModel.questionHelpEntries}
         />
       }
     />

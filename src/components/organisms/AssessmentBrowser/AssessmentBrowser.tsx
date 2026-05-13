@@ -1,7 +1,7 @@
 'use client';
 
 import confetti from 'canvas-confetti';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button, Icon, Text } from '@/components/atoms';
 import { AnswerFeedbackPanel } from '@/components/molecules';
 import { QuestionWorkspace } from '../QuestionWorkspace/QuestionWorkspace';
@@ -74,8 +74,10 @@ export function AssessmentBrowser({
   const progressPercent = ((currentIndex + 1) / questionCount) * 100;
   const isPostTestReview = stage === 'results';
   const showHelpButton = mode === 'review' || isPostTestReview;
+  const hasBreakdown = Boolean(questionHelp?.guidedSteps?.length);
   const previousQuestionIdRef = useRef(question.id);
   const celebratedRef = useRef<string | null>(null);
+  const [isBreakdownOpen, setIsBreakdownOpen] = useState(false);
 
   const nextLabel = isPostTestReview
     ? isLastQuestion
@@ -97,6 +99,10 @@ export function AssessmentBrowser({
   }, [question.id]);
 
   useEffect(() => {
+    setIsBreakdownOpen(false);
+  }, [question.id]);
+
+  useEffect(() => {
     if (stage !== 'browser' || mode !== 'review' || !evaluation?.isCorrect) {
       return;
     }
@@ -115,6 +121,14 @@ export function AssessmentBrowser({
       scalar: 0.9,
     });
   }, [evaluation?.isCorrect, mode, question.id, stage]);
+
+  useEffect(() => {
+    if (!hasBreakdown || evaluation?.isCorrect !== false) {
+      return;
+    }
+
+    setIsBreakdownOpen(true);
+  }, [evaluation?.isCorrect, hasBreakdown]);
 
   return (
     <section className={styles.screen}>
@@ -145,8 +159,10 @@ export function AssessmentBrowser({
             response={response}
             evaluation={evaluation}
             questionHelp={questionHelp}
+            guidedStepResponses={guidedStepResponses}
+            isBreakdownOpen={isBreakdownOpen}
             showReviewState={isPostTestReview}
-            questionCount={questionCount}
+            onGuidedStepResponseChange={onGuidedStepResponseChange}
             onResponseChange={onResponseChange}
           />
 
@@ -167,13 +183,29 @@ export function AssessmentBrowser({
         </main>
 
         <footer className={styles.footer}>
-          <div className={styles.navDock}>
+          <div className={styles.footerSlotStart}>
             <Button variant="ghost" onClick={onPrevious} disabled={!canGoPrevious}>
               <span className={styles.buttonContent}>
                 <Icon name="arrowLeft" />
                 <span>Back</span>
               </span>
             </Button>
+          </div>
+          <div className={styles.footerSlotCenter}>
+            {hasBreakdown ? (
+              <Button
+                variant={isBreakdownOpen ? 'secondary' : 'ghost'}
+                className={styles.breakdownButton}
+                onClick={() => setIsBreakdownOpen((current) => !current)}
+              >
+                <span className={styles.buttonContent}>
+                  <Icon name="layers" />
+                  <span className={styles.breakdownLabel}>Break Down</span>
+                </span>
+              </Button>
+            ) : null}
+          </div>
+          <div className={styles.footerSlotEnd}>
             <Button onClick={onNext}>
               <span className={styles.buttonContent}>
                 <span>{nextLabel}</span>
@@ -195,8 +227,6 @@ export function AssessmentBrowser({
           explanation={question.explanation}
           standard={standard}
           lessons={lessons}
-          guidedStepResponses={guidedStepResponses}
-          onGuidedStepResponseChange={onGuidedStepResponseChange}
           onClose={onToggleHelp}
         />
       ) : null}

@@ -2,17 +2,16 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Heading, MathText, Text } from '@/components/atoms';
-import { QuestionOption, SegmentedTabs } from '@/components/molecules';
+import { SegmentedTabs } from '@/components/molecules';
 import type {
   EvaluationResult,
-  GuidedStepResponseMap,
   LessonResource,
   QuestionHelpEntry,
   StandardDefinition,
 } from '@/types/assessment';
 import styles from './HelpDrawer.module.css';
 
-type HelpPanelId = 'setup' | 'steps' | 'explain' | 'standard' | 'videos';
+type HelpPanelId = 'setup' | 'explain' | 'standard' | 'videos';
 
 function getLessonVideos(lessons: LessonResource[]) {
   return lessons.flatMap((lesson) =>
@@ -32,8 +31,6 @@ export function HelpDrawer({
   explanation,
   standard,
   lessons,
-  guidedStepResponses,
-  onGuidedStepResponseChange,
   onClose,
 }: {
   isOpen: boolean;
@@ -44,8 +41,6 @@ export function HelpDrawer({
   explanation: string;
   standard: StandardDefinition | undefined;
   lessons: LessonResource[];
-  guidedStepResponses: GuidedStepResponseMap | undefined;
-  onGuidedStepResponseChange: (stepId: string, optionId: string) => void;
   onClose: () => void;
 }) {
   const videos = useMemo(() => getLessonVideos(lessons), [lessons]);
@@ -53,29 +48,24 @@ export function HelpDrawer({
     () =>
       [
         { id: 'setup', label: 'Set Up' },
-        questionHelp?.guidedSteps?.length ? { id: 'steps', label: 'Steps' } : null,
         { id: 'explain', label: 'Why' },
         { id: 'standard', label: 'Standard' },
         { id: 'videos', label: 'Videos' },
       ].filter(Boolean) as { id: HelpPanelId; label: string }[],
-    [questionHelp?.guidedSteps],
+    [],
   );
 
   const [activePanel, setActivePanel] = useState<HelpPanelId>('setup');
   const [activeVideoId, setActiveVideoId] = useState(videos[0]?.id ?? '');
-  const [activeStepId, setActiveStepId] = useState(questionHelp?.guidedSteps?.[0]?.id ?? '');
   const [isVideoOverlayOpen, setIsVideoOverlayOpen] = useState(false);
 
   const activeVideo = videos.find((video) => video.id === activeVideoId) ?? videos[0];
-  const activeStep =
-    questionHelp?.guidedSteps?.find((step) => step.id === activeStepId) ?? questionHelp?.guidedSteps?.[0];
 
   useEffect(() => {
     setActivePanel('setup');
     setActiveVideoId(videos[0]?.id ?? '');
-    setActiveStepId(questionHelp?.guidedSteps?.[0]?.id ?? '');
     setIsVideoOverlayOpen(false);
-  }, [questionHelp?.guidedSteps, questionNumber, videos]);
+  }, [questionNumber, videos]);
 
   return (
     <>
@@ -127,49 +117,6 @@ export function HelpDrawer({
                 </Text>
               </section>
             </div>
-          ) : null}
-
-          {activePanel === 'steps' ? (
-            questionHelp?.guidedSteps?.length ? (
-              <div className={styles.videoPanel}>
-                <SegmentedTabs
-                  items={questionHelp.guidedSteps.map((step, index) => ({
-                    id: step.id,
-                    label: `Step ${index + 1}`,
-                  }))}
-                  activeId={activeStep?.id ?? ''}
-                  onChange={setActiveStepId}
-                />
-                {activeStep ? (
-                  <div className={styles.guidedStep}>
-                    <section className={styles.section}>
-                      <Text tone="soft">{activeStep.title}</Text>
-                      <Heading as="h3" size="sm">
-                        {activeStep.prompt}
-                      </Heading>
-                    </section>
-                    <div className={styles.guidedStepOptions}>
-                      {activeStep.options.map((option) => (
-                        <QuestionOption
-                          key={option.id}
-                          label={option.id}
-                          content={option.content}
-                          selected={guidedStepResponses?.[activeStep.id] === option.id}
-                          onClick={() => onGuidedStepResponseChange(activeStep.id, option.id)}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-              </div>
-            ) : (
-              <section className={styles.section}>
-                <Heading as="h3" size="sm">
-                  Step-by-step mode is unavailable
-                </Heading>
-                <Text tone="soft">This question does not have guided problem-structure prompts yet.</Text>
-              </section>
-            )
           ) : null}
 
           {activePanel === 'explain' ? (

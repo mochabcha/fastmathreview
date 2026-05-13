@@ -1,6 +1,13 @@
 import 'server-only';
 
-import type { AssessmentDefinition, ReferenceSheet, StandardDefinition } from '@/types/assessment';
+import type {
+  AssessmentDefinition,
+  OperationKeywordCatalog,
+  PartialQuestionHelpEntryMap,
+  QuestionHelpEntryMap,
+  ReferenceSheet,
+  StandardDefinition,
+} from '@/types/assessment';
 import { getMongoDatabase, isMongoConfigured } from './mongodb';
 
 interface ContentDocument<T> {
@@ -45,4 +52,16 @@ export async function getStandardsContent(fallbackValue: StandardDefinition[]) {
 
 export async function getReferenceContent(fallbackValue: ReferenceSheet) {
   return getBootstrappedContent('references:grade4-fast-reference', fallbackValue);
+}
+
+export async function getQuestionHelpContent(fallbackValue: QuestionHelpEntryMap) {
+  return getBootstrappedContent('question-help:grade4-fast-question-help', fallbackValue);
+}
+
+export async function getProblemSupportContent(fallbackValue: PartialQuestionHelpEntryMap) {
+  return getBootstrappedContent('problem-support:grade4-fast-problem-support', fallbackValue);
+}
+
+export async function getKeywordCatalogContent(fallbackValue: OperationKeywordCatalog) {
+  return getBootstrappedContent('keyword-catalog:grade4-fast-operation-keywords', fallbackValue);
 }

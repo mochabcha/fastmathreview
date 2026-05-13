@@ -1,0 +1,53 @@
+{
+  "addition": [
+    { "phrase": "altogether", "rationale": "The word 'altogether' means the amounts are being joined to make one total." },
+    { "phrase": "in all", "rationale": "The phrase 'in all' signals that separate amounts should be combined." },
+    { "phrase": "combine", "rationale": "When quantities are combined, addition is used to find the total." },
+    { "phrase": "combined", "rationale": "The word 'combined' tells you the amounts are put together." },
+    { "phrase": "sum", "rationale": "A sum is the result of adding numbers together." },
+    { "phrase": "together", "rationale": "When amounts go together, you usually add them." },
+    { "phrase": "total amount", "rationale": "A total amount is found by adding the parts." }
+  ],
+  "subtraction": [
+    { "phrase": "left", "rationale": "The word 'left' often means one amount is taken away from another." },
+    { "phrase": "remain", "rationale": "If some amount remains, subtraction helps find what is left after taking away." },
+    { "phrase": "remaining", "rationale": "The word 'remaining' points to finding what is left over." },
+    { "phrase": "change", "rationale": "In money problems, finding the change usually means subtracting the total cost from the amount paid." },
+    { "phrase": "difference", "rationale": "A difference is found by subtracting one amount from another." },
+    { "phrase": "less than", "rationale": "The phrase 'less than' is a subtraction clue because it compares by taking away." },
+    { "phrase": "take away", "rationale": "To take away one amount from another, use subtraction." }
+  ],
+  "multiplication": [
+    { "phrase": "times", "rationale": "The word 'times' is a direct multiplication clue." },
+    { "phrase": "product", "rationale": "A product is the result of multiplication." },
+    { "phrase": "twice", "rationale": "The word 'twice' means 2 times as many." },
+    { "phrase": "double", "rationale": "To double an amount means to multiply it by 2." },
+    { "phrase": "for 5 days", "rationale": "A repeated amount over several days means the same quantity is happening again and again." },
+    { "phrase": "for 36 trays", "rationale": "The same group repeated for many trays is multiplication." },
+    { "phrase": "4 batches", "rationale": "Batches represent repeated equal groups, which is multiplication." }
+  ],
+  "division": [
+    { "phrase": "quotient", "rationale": "A quotient is the result of division." },
+    { "phrase": "remainder", "rationale": "A remainder appears when a division problem does not split evenly." },
+    { "phrase": "full groups", "rationale": "Counting only full groups means divide the total into equal groups and interpret the remainder." },
+    { "phrase": "how many buses", "rationale": "When you know the total and the size of each group, division finds how many groups are needed." },
+    { "phrase": "how many boxes", "rationale": "If a total is sorted into equal-size boxes, division finds the number of boxes." },
+    { "phrase": "how many are in each", "rationale": "Finding the amount in each equal group is division." }
+  ],
+  "equalGroups": [
+    { "phrase": "for each", "rationale": "The phrase 'for each' tells you one amount is repeated for every group." },
+    { "phrase": "of each", "rationale": "The phrase 'of each' points to equal groups and helps you decide how one group relates to the total." },
+    { "phrase": "in each", "rationale": "The phrase 'in each' signals an equal amount in every group." },
+    { "phrase": "each", "rationale": "The word 'each' signals equal groups, so think about how one group relates to the whole." },
+    { "phrase": "every", "rationale": "The word 'every' means the same amount repeats in each group." },
+    { "phrase": "per", "rationale": "The word 'per' tells you one amount belongs to one group or one unit." },
+    { "phrase": "equally", "rationale": "The word 'equally' means the total is split into equal groups." },
+    { "phrase": "equal-price", "rationale": "Equal-price items mean the same amount is repeated for each item." },
+    { "phrase": "equal pieces", "rationale": "Equal pieces means one whole is cut into equal-sized groups." },
+    { "phrase": "equal groups", "rationale": "Equal groups are a key clue for multiplication or division." },
+    { "phrase": "shared", "rationale": "When something is shared, you are thinking about equal groups." },
+    { "phrase": "share", "rationale": "Sharing a total among groups is an equal-groups situation." },
+    { "phrase": "split", "rationale": "When a total is split into equal parts, think about equal groups." },
+    { "phrase": "groups of", "rationale": "The phrase 'groups of' tells you the same-sized group repeats." }
+  ]
+}

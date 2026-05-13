@@ -3,8 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useAssessmentSession } from '@/lib/assessment/useAssessmentSession';
 import { getLessonResourcesForStandard } from '@/lib/review/getLessonResourcesForStandard';
-import { getQuestionHelpForQuestion } from '@/lib/review/getQuestionHelpForQuestion';
-import type { AssessmentDefinition, ReferenceSheet, StandardDefinition } from '@/types/assessment';
+import type {
+  AssessmentDefinition,
+  QuestionHelpEntryMap,
+  ReferenceSheet,
+  StandardDefinition,
+} from '@/types/assessment';
 import { AssessmentBrowser } from '../AssessmentBrowser/AssessmentBrowser';
 import { AssessmentEntryScreen } from '../AssessmentEntryScreen/AssessmentEntryScreen';
 import { SessionCompleteScreen } from '../SessionCompleteScreen/SessionCompleteScreen';
@@ -14,10 +18,12 @@ export function AssessmentSession({
   assessment,
   standards,
   references,
+  questionHelpEntries,
 }: {
   assessment: AssessmentDefinition;
   standards: StandardDefinition[];
   references: ReferenceSheet;
+  questionHelpEntries: QuestionHelpEntryMap;
 }) {
   const session = useAssessmentSession(assessment);
   const [isReferenceOpen, setIsReferenceOpen] = useState(false);
@@ -136,7 +142,7 @@ export function AssessmentSession({
       evaluation={session.currentEvaluation}
       standard={standard}
       lessons={getLessonResourcesForStandard(standard)}
-      questionHelp={getQuestionHelpForQuestion(session.currentQuestion.id)}
+      questionHelp={questionHelpEntries[session.currentQuestion.id]}
       references={references}
       isReferenceOpen={isReferenceOpen}
       isHelpOpen={isHelpOpen}

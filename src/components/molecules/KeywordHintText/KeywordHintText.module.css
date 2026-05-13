@@ -1,0 +1,57 @@
+.highlight {
+  position: relative;
+  display: inline;
+  font-weight: 900;
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.14em;
+}
+
+.highlight[data-operation='addition'] {
+  color: color-mix(in oklab, var(--color-warning) 72%, black);
+  text-decoration-color: color-mix(in oklab, var(--color-warning) 72%, white);
+}
+
+.highlight[data-operation='subtraction'] {
+  color: color-mix(in oklab, var(--color-pop) 70%, black);
+  text-decoration-color: color-mix(in oklab, var(--color-pop) 74%, white);
+}
+
+.highlight[data-operation='multiplication'] {
+  color: color-mix(in oklab, var(--color-accent-strong) 82%, black);
+  text-decoration-color: color-mix(in oklab, var(--color-accent) 86%, white);
+}
+
+.highlight[data-operation='division'] {
+  color: color-mix(in oklab, var(--color-success) 76%, black);
+  text-decoration-color: color-mix(in oklab, var(--color-success) 78%, white);
+}
+
+.highlight[data-operation='comparison'],
+.highlight[data-operation='measurement'] {
+  color: color-mix(in oklab, var(--color-info) 78%, black);
+  text-decoration-color: color-mix(in oklab, var(--color-info) 80%, white);
+}
+
+.popover {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.45rem);
+  z-index: 5;
+  display: none;
+  width: min(16rem, 72vw);
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.95rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  background: color-mix(in oklab, var(--color-surface) 96%, white);
+  box-shadow: var(--shadow-card);
+  color: var(--color-ink);
+}
+
+.highlight:hover .popover,
+.highlight:focus .popover,
+.highlight:focus-within .popover {
+  display: block;
+}

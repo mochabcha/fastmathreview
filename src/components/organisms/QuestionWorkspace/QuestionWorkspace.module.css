@@ -25,20 +25,61 @@
   color: var(--color-ink-soft);
 }
 
-.keywordBank {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 .answerBlock {
   min-height: 0;
   padding-top: var(--space-5);
   display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   align-content: start;
+  gap: var(--space-4);
   overflow: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
+}
+
+.breakdownPanel {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+  border-radius: 1.35rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  background:
+    linear-gradient(145deg, color-mix(in oklab, white 88%, var(--color-sun) 12%), color-mix(in oklab, white 90%, var(--color-accent) 10%)),
+    var(--color-surface);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 70%, transparent),
+    0 18px 34px color-mix(in oklab, var(--color-accent) 10%, transparent);
+}
+
+.breakdownHeader {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.breakdownLabel,
+.breakdownProgress {
+  letter-spacing: 0.02em;
+}
+
+.breakdownTabs {
+  width: 100%;
+}
+
+.breakdownBody {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.breakdownPrompt {
+  font-size: clamp(0.98rem, 0.62vw + 0.92rem, 1.12rem);
+}
+
+.breakdownOptions {
+  min-width: 0;
+}
+
+.responsePanel {
+  min-height: 0;
 }
 
 .valueInput {
@@ -77,11 +118,17 @@
 
   .answerBlock {
     padding-top: 0.8rem;
+    gap: 0.8rem;
   }
 
   .valueInput {
     padding: 0.9rem 1rem;
     font-size: 1rem;
+  }
+
+  .breakdownPanel {
+    padding: 0.85rem;
+    border-radius: 1.1rem;
   }
 }
 
@@ -96,5 +143,18 @@
 
   .prompt {
     font-size: clamp(1rem, 1.08rem + 0.4vw, 1.24rem);
+  }
+
+  .answerBlock {
+    gap: 0.7rem;
+  }
+
+  .breakdownPanel {
+    padding: 0.78rem;
+    gap: 0.7rem;
+  }
+
+  .breakdownPrompt {
+    font-size: 0.95rem;
   }
 }
