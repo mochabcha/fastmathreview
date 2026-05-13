@@ -1,13 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAssessmentSession } from '@/lib/assessment/useAssessmentSession';
 import { getLessonResourcesForStandard } from '@/lib/review/getLessonResourcesForStandard';
 import { getQuestionHelpForQuestion } from '@/lib/review/getQuestionHelpForQuestion';
 import type { AssessmentDefinition, ReferenceSheet, StandardDefinition } from '@/types/assessment';
 import { AssessmentBrowser } from '../AssessmentBrowser/AssessmentBrowser';
 import { AssessmentEntryScreen } from '../AssessmentEntryScreen/AssessmentEntryScreen';
-import { ReviewCompleteScreen } from '../ReviewCompleteScreen/ReviewCompleteScreen';
+import { SessionCompleteScreen } from '../SessionCompleteScreen/SessionCompleteScreen';
+import { TestingReviewIntroScreen } from '../TestingReviewIntroScreen/TestingReviewIntroScreen';
 
 export function AssessmentSession({
   assessment,
@@ -21,11 +22,60 @@ export function AssessmentSession({
   const session = useAssessmentSession(assessment);
   const [isReferenceOpen, setIsReferenceOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [reportState, setReportState] = useState<{
+    status: 'idle' | 'saving' | 'saved' | 'error';
+    reportId?: string;
+  }>({ status: 'idle' });
 
   function closePanels() {
     setIsReferenceOpen(false);
     setIsHelpOpen(false);
   }
+
+  useEffect(() => {
+    if (session.stage !== 'session-complete' || !session.sessionReport || reportState.status !== 'idle') {
+      return;
+    }
+
+    let isCancelled = false;
+
+    async function saveReport() {
+      setReportState({ status: 'saving' });
+
+      try {
+        const response = await fetch('/api/session-reports', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(session.sessionReport),
+        });
+
+        if (!response.ok) {
+          throw new Error('Could not save session report');
+        }
+
+        const payload = (await response.json()) as { reportId?: string };
+
+        if (!isCancelled) {
+          setReportState({
+            status: 'saved',
+            reportId: payload.reportId,
+          });
+        }
+      } catch {
+        if (!isCancelled) {
+          setReportState({ status: 'error' });
+        }
+      }
+    }
+
+    void saveReport();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [reportState.status, session.sessionReport, session.stage]);
 
   if (session.stage === 'entry') {
     return (
@@ -33,22 +83,38 @@ export function AssessmentSession({
         assessment={assessment}
         onStartReview={() => {
           closePanels();
+          setReportState({ status: 'idle' });
           session.startSession('review');
         }}
         onStartTesting={() => {
           closePanels();
+          setReportState({ status: 'idle' });
           session.startSession('testing');
         }}
       />
     );
   }
 
-  if (session.stage === 'review-complete') {
+  if (session.stage === 'results-intro') {
     return (
-      <ReviewCompleteScreen
+      <TestingReviewIntroScreen
+        correctCount={session.correctCount}
         totalQuestions={assessment.questions.length}
+        onContinue={session.beginResultsReview}
+      />
+    );
+  }
+
+  if (session.stage === 'session-complete') {
+    return (
+      <SessionCompleteScreen
+        mode={session.mode}
+        correctCount={session.correctCount}
+        totalQuestions={assessment.questions.length}
+        reportState={reportState}
         onReturn={() => {
           closePanels();
+          setReportState({ status: 'idle' });
           session.returnToEntry();
         }}
       />
@@ -74,6 +140,7 @@ export function AssessmentSession({
       references={references}
       isReferenceOpen={isReferenceOpen}
       isHelpOpen={isHelpOpen}
+      guidedStepResponses={session.guidedStepResponses[session.currentQuestion.id]}
       questionCount={assessment.questions.length}
       currentIndex={session.currentIndex}
       scoreLabel={scoreLabel}
@@ -81,6 +148,9 @@ export function AssessmentSession({
       isLastQuestion={session.isLastQuestion}
       onToggleReference={() => setIsReferenceOpen((current) => !current)}
       onToggleHelp={() => setIsHelpOpen((current) => !current)}
+      onGuidedStepResponseChange={(stepId, optionId) =>
+        session.updateGuidedStepResponse(session.currentQuestion.id, stepId, optionId)
+      }
       onPrevious={session.goPrevious}
       onNext={() => {
         const result = session.advance();

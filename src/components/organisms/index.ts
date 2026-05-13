@@ -5,3 +5,5 @@ export * from './HelpDrawer/HelpDrawer';
 export * from './QuestionWorkspace/QuestionWorkspace';
 export * from './ReferenceDrawer/ReferenceDrawer';
 export * from './ReviewCompleteScreen/ReviewCompleteScreen';
+export * from './SessionCompleteScreen/SessionCompleteScreen';
+export * from './TestingReviewIntroScreen/TestingReviewIntroScreen';

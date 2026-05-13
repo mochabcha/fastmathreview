@@ -42,9 +42,38 @@ export interface ReferenceSheet {
   groups: ReferenceGroup[];
 }
 
+export type OperationHint =
+  | 'addition'
+  | 'subtraction'
+  | 'multiplication'
+  | 'division'
+  | 'comparison'
+  | 'measurement';
+
+export interface KeywordHint {
+  phrase: string;
+  operation: OperationHint;
+  rationale: string;
+}
+
+export interface GuidedStepOption {
+  id: string;
+  content: string;
+  isCorrect: boolean;
+}
+
+export interface GuidedStepPrompt {
+  id: string;
+  title: string;
+  prompt: string;
+  options: GuidedStepOption[];
+}
+
 export interface QuestionHelpEntry {
   mathSetup: string;
   translation: string;
+  keywords?: KeywordHint[];
+  guidedSteps?: GuidedStepPrompt[];
 }
 
 export interface ChoiceOption {
@@ -118,6 +147,29 @@ export type QuestionResponseValue =
 export interface EvaluationResult {
   isCorrect: boolean;
   expectedSummary: string;
+}
+
+export type GuidedStepResponseMap = Record<string, string>;
+
+export interface QuestionSessionReport {
+  questionId: string;
+  standardId: string;
+  prompt: string;
+  response?: QuestionResponseValue;
+  evaluation?: EvaluationResult;
+  guidedStepResponses?: GuidedStepResponseMap;
+}
+
+export interface AssessmentSessionReport {
+  assessmentId: string;
+  assessmentTitle: string;
+  mode: AssessmentMode;
+  startedAt: string;
+  completedAt: string;
+  correctCount: number;
+  totalQuestions: number;
+  scorePercent: number;
+  questionReports: QuestionSessionReport[];
 }
 
 export interface AssessmentOverview {

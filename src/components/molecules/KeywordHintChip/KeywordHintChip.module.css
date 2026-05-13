@@ -1,0 +1,59 @@
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-surface) 84%, white);
+  color: var(--color-ink);
+  padding: 0.45rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+}
+
+.operationLabel {
+  border-radius: 999px;
+  padding: 0.14rem 0.42rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: color-mix(in oklab, white 72%, transparent);
+}
+
+.chip[data-operation='addition'] {
+  background: color-mix(in oklab, var(--color-sun) 28%, white);
+}
+
+.chip[data-operation='subtraction'] {
+  background: color-mix(in oklab, var(--color-pop) 18%, white);
+}
+
+.chip[data-operation='multiplication'] {
+  background: color-mix(in oklab, var(--color-accent) 18%, white);
+}
+
+.chip[data-operation='division'] {
+  background: color-mix(in oklab, var(--color-success) 20%, white);
+}
+
+.chip[data-operation='comparison'],
+.chip[data-operation='measurement'] {
+  background: color-mix(in oklab, var(--color-info) 22%, white);
+}
+
+.popover {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.5rem);
+  z-index: 4;
+  width: min(16rem, 70vw);
+  padding: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  background: color-mix(in oklab, var(--color-surface) 95%, white);
+  box-shadow: var(--shadow-card);
+}

@@ -4,13 +4,15 @@ import { useEffect, useMemo, useState } from 'react';
 import { evaluateQuestion } from './evaluateQuestion';
 import type {
   AssessmentDefinition,
+  AssessmentSessionReport,
+  GuidedStepResponseMap,
   AssessmentMode,
   AssessmentQuestion,
   EvaluationResult,
   QuestionResponseValue,
 } from '@/types/assessment';
 
-type AssessmentStage = 'entry' | 'browser' | 'results' | 'review-complete';
+type AssessmentStage = 'entry' | 'browser' | 'results-intro' | 'results' | 'session-complete';
 
 const STORAGE_PREFIX = 'fast-math-review-session';
 
@@ -47,6 +49,9 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [responses, setResponses] = useState<Record<string, QuestionResponseValue>>({});
   const [evaluations, setEvaluations] = useState<Record<string, EvaluationResult>>({});
+  const [guidedStepResponses, setGuidedStepResponses] = useState<Record<string, GuidedStepResponseMap>>({});
+  const [startedAt, setStartedAt] = useState<string | null>(null);
+  const [completedAt, setCompletedAt] = useState<string | null>(null);
 
   useEffect(() => {
     const raw = window.localStorage.getItem(storageKey);
@@ -61,6 +66,9 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
         currentIndex: number;
         responses: Record<string, QuestionResponseValue>;
         evaluations: Record<string, EvaluationResult>;
+        guidedStepResponses: Record<string, GuidedStepResponseMap>;
+        startedAt: string | null;
+        completedAt: string | null;
       };
 
       setStage(parsed.stage);
@@ -68,6 +76,9 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
       setCurrentIndex(parsed.currentIndex);
       setResponses(parsed.responses);
       setEvaluations(parsed.evaluations);
+      setGuidedStepResponses(parsed.guidedStepResponses ?? {});
+      setStartedAt(parsed.startedAt ?? null);
+      setCompletedAt(parsed.completedAt ?? null);
     } catch {
       window.localStorage.removeItem(storageKey);
     }
@@ -76,9 +87,18 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
   useEffect(() => {
     window.localStorage.setItem(
       storageKey,
-      JSON.stringify({ stage, mode, currentIndex, responses, evaluations }),
+      JSON.stringify({
+        stage,
+        mode,
+        currentIndex,
+        responses,
+        evaluations,
+        guidedStepResponses,
+        startedAt,
+        completedAt,
+      }),
     );
-  }, [currentIndex, evaluations, mode, responses, stage, storageKey]);
+  }, [completedAt, currentIndex, evaluations, guidedStepResponses, mode, responses, stage, startedAt, storageKey]);
 
   const totalQuestions = assessment.questions.length;
   const currentQuestion = assessment.questions[currentIndex];
@@ -128,6 +148,9 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
     setCurrentIndex(0);
     setResponses({});
     setEvaluations({});
+    setGuidedStepResponses({});
+    setStartedAt(new Date().toISOString());
+    setCompletedAt(null);
   }
 
   function returnToEntry() {
@@ -135,6 +158,9 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
     setCurrentIndex(0);
     setResponses({});
     setEvaluations({});
+    setGuidedStepResponses({});
+    setStartedAt(null);
+    setCompletedAt(null);
   }
 
   function checkCurrentQuestion() {
@@ -148,7 +174,7 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
       const nextEvaluations = evaluateAllQuestions(assessment.questions, responses);
       setEvaluations(nextEvaluations);
       setCurrentIndex(0);
-      setStage('results');
+      setStage('results-intro');
       return nextEvaluations[currentQuestion.id];
     }
 
@@ -164,7 +190,8 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
     }
 
     if (isLastQuestion) {
-      setStage('review-complete');
+      setCompletedAt(new Date().toISOString());
+      setStage('session-complete');
       return result;
     }
 
@@ -175,7 +202,8 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
   function advance() {
     if (stage === 'results') {
       if (isLastQuestion) {
-        returnToEntry();
+        setCompletedAt(new Date().toISOString());
+        setStage('session-complete');
         return undefined;
       }
 
@@ -190,7 +218,7 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
     const nextEvaluations = evaluateAllQuestions(assessment.questions, responses);
     setEvaluations(nextEvaluations);
     setCurrentIndex(0);
-    setStage('results');
+    setStage('results-intro');
   }
 
   function retryCurrentQuestion() {
@@ -202,6 +230,43 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
     clearEvaluation(currentQuestion.id);
   }
 
+  function beginResultsReview() {
+    setCurrentIndex(0);
+    setStage('results');
+  }
+
+  function updateGuidedStepResponse(questionId: string, stepId: string, optionId: string) {
+    setGuidedStepResponses((current) => ({
+      ...current,
+      [questionId]: {
+        ...(current[questionId] ?? {}),
+        [stepId]: optionId,
+      },
+    }));
+  }
+
+  const sessionReport: AssessmentSessionReport | null =
+    startedAt && completedAt
+      ? {
+          assessmentId: assessment.id,
+          assessmentTitle: assessment.title,
+          mode,
+          startedAt,
+          completedAt,
+          correctCount,
+          totalQuestions,
+          scorePercent,
+          questionReports: assessment.questions.map((question) => ({
+            questionId: question.id,
+            standardId: question.standardId,
+            prompt: question.prompt,
+            response: responses[question.id],
+            evaluation: evaluations[question.id],
+            guidedStepResponses: guidedStepResponses[question.id],
+          })),
+        }
+      : null;
+
   return {
     stage,
     mode,
@@ -212,6 +277,7 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
     currentEvaluation,
     responses,
     evaluations,
+    guidedStepResponses,
     statuses,
     answeredCount,
     correctCount,
@@ -222,9 +288,12 @@ export function useAssessmentSession(assessment: AssessmentDefinition) {
     startSession,
     returnToEntry,
     updateResponse,
+    updateGuidedStepResponse,
     advance,
+    beginResultsReview,
     goPrevious: () => setCurrentIndex((current) => Math.max(current - 1, 0)),
     retryCurrentQuestion,
     finishTestingNow,
+    sessionReport,
   };
 }

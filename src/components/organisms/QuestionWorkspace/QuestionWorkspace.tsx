@@ -1,8 +1,8 @@
 'use client';
 
 import { Badge, Cluster, MathText, Stack, Text } from '@/components/atoms';
-import { QuestionOption } from '@/components/molecules';
-import type { AssessmentQuestion, QuestionResponseValue } from '@/types/assessment';
+import { KeywordHintChip, QuestionOption } from '@/components/molecules';
+import type { AssessmentQuestion, EvaluationResult, QuestionHelpEntry, QuestionResponseValue } from '@/types/assessment';
 import styles from './QuestionWorkspace.module.css';
 
 function toggleListValue(values: string[], value: string) {
@@ -12,6 +12,8 @@ function toggleListValue(values: string[], value: string) {
 function renderSingleOrMulti(
   question: AssessmentQuestion,
   response: QuestionResponseValue | undefined,
+  evaluation: EvaluationResult | undefined,
+  showReviewState: boolean,
   onResponseChange: (nextValue: QuestionResponseValue) => void,
 ) {
   if (question.type !== 'single' && question.type !== 'multi') {
@@ -28,6 +30,15 @@ function renderSingleOrMulti(
           label={option.id}
           content={option.content}
           selected={selectedOptionIds.includes(option.id)}
+          reviewState={
+            showReviewState && evaluation
+              ? question.correctOptionIds.includes(option.id)
+                ? 'correct'
+                : selectedOptionIds.includes(option.id)
+                  ? 'incorrect'
+                  : 'neutral'
+              : 'neutral'
+          }
           onClick={() =>
             onResponseChange({
               type: question.type,
@@ -46,6 +57,7 @@ function renderSingleOrMulti(
 function renderValue(
   question: AssessmentQuestion,
   response: QuestionResponseValue | undefined,
+  showReviewState: boolean,
   onResponseChange: (nextValue: QuestionResponseValue) => void,
 ) {
   if (question.type !== 'value') {
@@ -62,6 +74,7 @@ function renderValue(
         inputMode={question.validation.kind === 'numeric' ? 'decimal' : 'text'}
         className={styles.valueInput}
         value={value}
+        disabled={showReviewState}
         onChange={(event) => onResponseChange({ type: 'value', value: event.target.value })}
         placeholder="Enter one value."
       />
@@ -72,14 +85,16 @@ function renderValue(
 function renderBody(
   question: AssessmentQuestion,
   response: QuestionResponseValue | undefined,
+  evaluation: EvaluationResult | undefined,
+  showReviewState: boolean,
   onResponseChange: (nextValue: QuestionResponseValue) => void,
 ) {
   switch (question.type) {
     case 'single':
     case 'multi':
-      return renderSingleOrMulti(question, response, onResponseChange);
+      return renderSingleOrMulti(question, response, evaluation, showReviewState, onResponseChange);
     case 'value':
-      return renderValue(question, response, onResponseChange);
+      return renderValue(question, response, showReviewState, onResponseChange);
     default:
       return null;
   }
@@ -88,11 +103,17 @@ function renderBody(
 export function QuestionWorkspace({
   question,
   response,
+  evaluation,
+  questionHelp,
+  showReviewState = false,
   questionCount,
   onResponseChange,
 }: {
   question: AssessmentQuestion;
   response: QuestionResponseValue | undefined;
+  evaluation: EvaluationResult | undefined;
+  questionHelp: QuestionHelpEntry | undefined;
+  showReviewState?: boolean;
   questionCount: number;
   onResponseChange: (nextValue: QuestionResponseValue) => void;
 }) {
@@ -117,10 +138,19 @@ export function QuestionWorkspace({
               ))}
             </ul>
           ) : null}
+          {questionHelp?.keywords?.length ? (
+            <div className={styles.keywordBank}>
+              {questionHelp.keywords.map((hint) => (
+                <KeywordHintChip key={`${question.id}-${hint.phrase}`} hint={hint} />
+              ))}
+            </div>
+          ) : null}
         </Stack>
       </div>
 
-      <div className={styles.answerBlock}>{renderBody(question, response, onResponseChange)}</div>
+      <div className={styles.answerBlock}>
+        {renderBody(question, response, evaluation, showReviewState, onResponseChange)}
+      </div>
     </div>
   );
 }

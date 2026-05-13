@@ -2,8 +2,8 @@ import { AssessmentSession } from '@/components/organisms/AssessmentSession/Asse
 import { AssessmentPageTemplate } from '@/components/templates/AssessmentPageTemplate/AssessmentPageTemplate';
 import { getGrade4AssessmentPageModel } from '@/lib/pages/getGrade4AssessmentPageModel';
 
-export default function Page() {
-  const pageModel = getGrade4AssessmentPageModel();
+export default async function Page() {
+  const pageModel = await getGrade4AssessmentPageModel();
 
   return (
     <AssessmentPageTemplate

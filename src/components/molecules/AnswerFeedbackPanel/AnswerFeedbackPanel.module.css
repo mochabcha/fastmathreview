@@ -1,0 +1,35 @@
+.panel {
+  display: grid;
+  gap: 0.8rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, white);
+  border-radius: 1.2rem;
+  padding: 0.95rem 1rem;
+  background: color-mix(in oklab, var(--color-surface) 86%, white);
+}
+
+.panel[data-state='correct'] {
+  background: color-mix(in oklab, var(--color-success) 12%, white);
+}
+
+.panel[data-state='incorrect'] {
+  background: color-mix(in oklab, var(--color-pop) 8%, white);
+}
+
+.header,
+.summaryBlock,
+.explanation {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+}

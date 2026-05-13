@@ -53,6 +53,26 @@
   color: var(--color-ink);
 }
 
+.correct {
+  background: color-mix(in oklab, var(--color-success) 18%, white);
+}
+
+.incorrect {
+  background: color-mix(in oklab, var(--color-danger) 16%, white);
+}
+
+.correct .label {
+  border-color: color-mix(in oklab, var(--color-success) 70%, white);
+  background: color-mix(in oklab, var(--color-success) 26%, white);
+  color: var(--color-ink);
+}
+
+.incorrect .label {
+  border-color: color-mix(in oklab, var(--color-danger) 68%, white);
+  background: color-mix(in oklab, var(--color-danger) 22%, white);
+  color: var(--color-ink);
+}
+
 .content {
   font-size: var(--text-md);
   line-height: var(--leading-copy);

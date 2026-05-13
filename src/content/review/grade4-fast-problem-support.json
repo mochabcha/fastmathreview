@@ -1,0 +1,609 @@
+{
+  "q5": {
+    "keywords": [
+      { "phrase": "each", "operation": "multiplication", "rationale": "The phrase 'each' signals equal groups, so you multiply the amount in one group by the number of groups." },
+      { "phrase": "for 36 trays", "operation": "multiplication", "rationale": "A repeated amount across many trays means the same group is happening again and again." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which numbers matter when you set up this problem?",
+        "options": [
+          { "id": "A", "content": "24 muffins in each tray and 36 trays", "isCorrect": true },
+          { "id": "B", "content": "24 muffins and 60 muffins because 24 + 36 = 60", "isCorrect": false },
+          { "id": "C", "content": "36 trays and 12 muffins because 12 is a fact family number", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What operation should you use first?",
+        "options": [
+          { "id": "A", "content": "Addition because you are putting two numbers side by side", "isCorrect": false },
+          { "id": "B", "content": "Multiplication because the same amount is in each tray", "isCorrect": true },
+          { "id": "C", "content": "Division because you are splitting muffins into trays", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What is the problem really asking you to find?",
+        "options": [
+          { "id": "A", "content": "How many trays there are", "isCorrect": false },
+          { "id": "B", "content": "How many muffins fit in one tray", "isCorrect": false },
+          { "id": "C", "content": "How many muffins there are altogether", "isCorrect": true }
+        ]
+      }
+    ]
+  },
+  "q6": {
+    "keywords": [
+      { "phrase": "equally", "operation": "division", "rationale": "When a total is shared equally, division tells how much goes in each equal group." },
+      { "phrase": "into 6 groups", "operation": "division", "rationale": "A total split into a fixed number of groups means divide the total by the number of groups." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values should you use in the number sentence?",
+        "options": [
+          { "id": "A", "content": "1,386 pencils and 6 equal groups", "isCorrect": true },
+          { "id": "B", "content": "1,386 pencils and 1,392 because that is the next number", "isCorrect": false },
+          { "id": "C", "content": "6 groups and 12 pencils because 6 × 2 = 12", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "Which operation matches equal sharing?",
+        "options": [
+          { "id": "A", "content": "Division because the pencils are shared into equal groups", "isCorrect": true },
+          { "id": "B", "content": "Multiplication because more groups always means multiply", "isCorrect": false },
+          { "id": "C", "content": "Subtraction because you take away pencils one at a time", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What result are you trying to find?",
+        "options": [
+          { "id": "A", "content": "How many pencils are in each group", "isCorrect": true },
+          { "id": "B", "content": "How many groups there are", "isCorrect": false },
+          { "id": "C", "content": "How many pencils are left over after one group", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q8": {
+    "keywords": [
+      { "phrase": "8 students each", "operation": "division", "rationale": "Each bus holds the same number of students, so divide the total by the size of one group." },
+      { "phrase": "how many buses", "operation": "division", "rationale": "You know the total students and the size of each bus group, so division finds the number of buses." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values matter most for solving the bus problem?",
+        "options": [
+          { "id": "A", "content": "197 students and 8 students per bus", "isCorrect": true },
+          { "id": "B", "content": "197 students and 205 students because that is close", "isCorrect": false },
+          { "id": "C", "content": "8 buses and 197 buses", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "Which operation tells how many buses are needed?",
+        "options": [
+          { "id": "A", "content": "Division because 197 students are grouped by 8 per bus", "isCorrect": true },
+          { "id": "B", "content": "Addition because you count up students and buses together", "isCorrect": false },
+          { "id": "C", "content": "Subtraction because students leave one bus at a time", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What is the problem asking you to decide after dividing?",
+        "options": [
+          { "id": "A", "content": "Whether the remainder means another bus is needed", "isCorrect": true },
+          { "id": "B", "content": "Whether 197 is an even number", "isCorrect": false },
+          { "id": "C", "content": "Whether each bus should have 197 students", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q9": {
+    "keywords": [
+      { "phrase": "bags of 9", "operation": "division", "rationale": "A fixed bag size means divide the total oranges by 9 to count full bags." },
+      { "phrase": "use only the full groups", "operation": "division", "rationale": "You are counting complete equal groups, so division with the remainder interpreted is needed." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which numbers belong in the division sentence?",
+        "options": [
+          { "id": "A", "content": "734 oranges and 9 oranges in each bag", "isCorrect": true },
+          { "id": "B", "content": "734 oranges and 743 oranges", "isCorrect": false },
+          { "id": "C", "content": "9 bags and 81 oranges", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What operation matches full bags of 9 oranges?",
+        "options": [
+          { "id": "A", "content": "Division because the oranges are grouped into equal bags", "isCorrect": true },
+          { "id": "B", "content": "Multiplication because more than one bag is used", "isCorrect": false },
+          { "id": "C", "content": "Addition because oranges are being combined", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What is the answer supposed to represent?",
+        "options": [
+          { "id": "A", "content": "The number of complete bags that can be filled", "isCorrect": true },
+          { "id": "B", "content": "The number of oranges in one bag after filling", "isCorrect": false },
+          { "id": "C", "content": "The total oranges plus the bags", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q11": {
+    "keywords": [
+      { "phrase": "9 tickets", "operation": "multiplication", "rationale": "A number of identical ticket prices means use multiplication to find the total." },
+      { "phrase": "total", "operation": "multiplication", "rationale": "The total cost comes from repeating the same ticket price for each ticket." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values should appear in the equation?",
+        "options": [
+          { "id": "A", "content": "9 tickets and a total of 108 dollars", "isCorrect": true },
+          { "id": "B", "content": "108 tickets and 9 dollars", "isCorrect": false },
+          { "id": "C", "content": "9 and 117 because 9 + 108 = 117", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What operation connects ticket price and total cost?",
+        "options": [
+          { "id": "A", "content": "Multiplication because one ticket price is repeated 9 times", "isCorrect": true },
+          { "id": "B", "content": "Division because the total should be split first", "isCorrect": false },
+          { "id": "C", "content": "Subtraction because money is spent", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What unknown does the problem want you to find?",
+        "options": [
+          { "id": "A", "content": "The cost of one ticket", "isCorrect": true },
+          { "id": "B", "content": "The number of tickets sold", "isCorrect": false },
+          { "id": "C", "content": "The number of dollars left over", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q12": {
+    "keywords": [
+      { "phrase": "12 teams", "operation": "multiplication", "rationale": "Equal groups across 12 teams means one amount is repeated 12 times." },
+      { "phrase": "total bottles", "operation": "multiplication", "rationale": "The total comes from combining the same bottles-per-team amount over all teams." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which numbers matter for the equation?",
+        "options": [
+          { "id": "A", "content": "12 teams and 96 total bottles", "isCorrect": true },
+          { "id": "B", "content": "12 teams and 108 bottles because 12 is close to 96", "isCorrect": false },
+          { "id": "C", "content": "96 teams and 12 bottles", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "Which operation helps set up the unknown bottles per team?",
+        "options": [
+          { "id": "A", "content": "Multiplication because bottles per team repeated 12 times equals the total", "isCorrect": true },
+          { "id": "B", "content": "Addition because 12 + 96 uses all the numbers", "isCorrect": false },
+          { "id": "C", "content": "Subtraction because bottles are removed from the total", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What unknown are you solving for?",
+        "options": [
+          { "id": "A", "content": "How many bottles each team gets", "isCorrect": true },
+          { "id": "B", "content": "How many teams there are", "isCorrect": false },
+          { "id": "C", "content": "How many bottles are missing", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q21": {
+    "keywords": [
+      { "phrase": "combine", "operation": "addition", "rationale": "When two amounts are combined, addition finds the new total." },
+      { "phrase": "two money amounts", "operation": "addition", "rationale": "Two costs together mean add the decimal amounts." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which money amounts should be used?",
+        "options": [
+          { "id": "A", "content": "$18.45 and $7.38", "isCorrect": true },
+          { "id": "B", "content": "$18.45 and $25.83 because that is the total", "isCorrect": false },
+          { "id": "C", "content": "$7.38 and $11.07 because those digits look related", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "How should the two amounts be combined?",
+        "options": [
+          { "id": "A", "content": "Add them because the question asks for the total amount", "isCorrect": true },
+          { "id": "B", "content": "Subtract them because money problems always compare values", "isCorrect": false },
+          { "id": "C", "content": "Multiply them because both are decimals", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What is the question asking you to find?",
+        "options": [
+          { "id": "A", "content": "The total of both money amounts", "isCorrect": true },
+          { "id": "B", "content": "How much larger the first amount is", "isCorrect": false },
+          { "id": "C", "content": "How many cents are in one dollar", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q22": {
+    "keywords": [
+      { "phrase": "total cost first", "operation": "addition", "rationale": "The items must be added together before you can compare them to $10.00." },
+      { "phrase": "subtract from $10.00", "operation": "subtraction", "rationale": "After finding the total cost, subtraction tells how much money remains." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values belong in the setup?",
+        "options": [
+          { "id": "A", "content": "$6.75, $1.89, and $10.00", "isCorrect": true },
+          { "id": "B", "content": "$6.75 and $8.64 only", "isCorrect": false },
+          { "id": "C", "content": "$10.00 and $1.89 only", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What sequence of operations should you use?",
+        "options": [
+          { "id": "A", "content": "Add the item costs, then subtract that total from $10.00", "isCorrect": true },
+          { "id": "B", "content": "Subtract the item costs from each other, then add $10.00", "isCorrect": false },
+          { "id": "C", "content": "Multiply the prices because there are two items", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What final answer should represent?",
+        "options": [
+          { "id": "A", "content": "How much money is left from $10.00", "isCorrect": true },
+          { "id": "B", "content": "How much the first item costs", "isCorrect": false },
+          { "id": "C", "content": "How many items were bought", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q35": {
+    "keywords": [
+      { "phrase": "measuring the weight", "operation": "measurement", "rationale": "Weight is a measurement attribute, so choose the tool that measures weight." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "What information matters most here?",
+        "options": [
+          { "id": "A", "content": "The attribute is weight and the object is a watermelon", "isCorrect": true },
+          { "id": "B", "content": "The object is round so use a ruler", "isCorrect": false },
+          { "id": "C", "content": "The object is cold so use a thermometer", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "Which skill is the question using?",
+        "options": [
+          { "id": "A", "content": "Measurement because you must match an attribute to the correct tool", "isCorrect": true },
+          { "id": "B", "content": "Addition because tools and objects go together", "isCorrect": false },
+          { "id": "C", "content": "Division because watermelons can be cut into parts", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What answer should you give?",
+        "options": [
+          { "id": "A", "content": "The tool that measures weight", "isCorrect": true },
+          { "id": "B", "content": "The color of the watermelon", "isCorrect": false },
+          { "id": "C", "content": "The temperature of the watermelon", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q36": {
+    "keywords": [
+      { "phrase": "4 yards", "operation": "measurement", "rationale": "A unit conversion question uses the given measurement and the unit relationship." },
+      { "phrase": "how many feet", "operation": "multiplication", "rationale": "Because 1 yard equals 3 feet, multiply the number of yards by 3." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values are needed for the conversion?",
+        "options": [
+          { "id": "A", "content": "4 yards and the fact that 1 yard = 3 feet", "isCorrect": true },
+          { "id": "B", "content": "4 feet and 3 yards", "isCorrect": false },
+          { "id": "C", "content": "4 and 7 because 4 + 3 = 7", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "How do you convert the rope length?",
+        "options": [
+          { "id": "A", "content": "Multiply because each yard contains 3 feet", "isCorrect": true },
+          { "id": "B", "content": "Subtract because feet are smaller than yards", "isCorrect": false },
+          { "id": "C", "content": "Divide because you are changing units", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What should the final answer tell?",
+        "options": [
+          { "id": "A", "content": "How many feet the rope measures", "isCorrect": true },
+          { "id": "B", "content": "How many yards fit in one foot", "isCorrect": false },
+          { "id": "C", "content": "How many ropes there are", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q37": {
+    "keywords": [
+      { "phrase": "3 quarts", "operation": "measurement", "rationale": "The problem gives a measurement amount that must be converted to a smaller unit." },
+      { "phrase": "how many cups", "operation": "multiplication", "rationale": "Since 1 quart equals 4 cups, multiply the number of quarts by 4." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values should guide the conversion?",
+        "options": [
+          { "id": "A", "content": "3 quarts and the fact that 1 quart = 4 cups", "isCorrect": true },
+          { "id": "B", "content": "3 cups and 4 quarts", "isCorrect": false },
+          { "id": "C", "content": "3 and 7 because 3 + 4 = 7", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What operation converts the quarts into cups?",
+        "options": [
+          { "id": "A", "content": "Multiplication because each quart contains 4 cups", "isCorrect": true },
+          { "id": "B", "content": "Subtraction because cups are smaller units", "isCorrect": false },
+          { "id": "C", "content": "Division because the word 'how many' always means divide", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What should the answer describe?",
+        "options": [
+          { "id": "A", "content": "How many cups the pitcher holds", "isCorrect": true },
+          { "id": "B", "content": "How many quarts are left over", "isCorrect": false },
+          { "id": "C", "content": "How many pitchers are needed", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q38": {
+    "keywords": [
+      { "phrase": "1 hour 45 minutes later", "operation": "addition", "rationale": "When a trip happens later in time, add the elapsed time to the start time." },
+      { "phrase": "arrives", "operation": "addition", "rationale": "To find the arrival time, move forward from the departure time by the elapsed time." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which time values matter in this problem?",
+        "options": [
+          { "id": "A", "content": "8:35 a.m., 1 hour, and 45 minutes", "isCorrect": true },
+          { "id": "B", "content": "8:35 and 8:45 because both show 8", "isCorrect": false },
+          { "id": "C", "content": "1:45 and 10:20 because they look like clock times", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What should you do with the elapsed time?",
+        "options": [
+          { "id": "A", "content": "Add it to 8:35 because the bus arrives later", "isCorrect": true },
+          { "id": "B", "content": "Subtract it because time passes away", "isCorrect": false },
+          { "id": "C", "content": "Multiply the hour and minutes", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What result are you finding?",
+        "options": [
+          { "id": "A", "content": "The arrival time of the bus", "isCorrect": true },
+          { "id": "B", "content": "The number of buses leaving", "isCorrect": false },
+          { "id": "C", "content": "The length of one hour", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q39": {
+    "keywords": [
+      { "phrase": "each day for 5 days", "operation": "multiplication", "rationale": "A daily distance repeated for 5 days means multiply the one-day total by 5." },
+      { "phrase": "to the park and then back home", "operation": "addition", "rationale": "The two one-way distances must be added to find the daily total first." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values matter when setting up the distance problem?",
+        "options": [
+          { "id": "A", "content": "3/4 mile, 3/4 mile, and 5 days", "isCorrect": true },
+          { "id": "B", "content": "3/4 mile and 10 days", "isCorrect": false },
+          { "id": "C", "content": "5 miles and 3/4 day", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What operation plan matches the story?",
+        "options": [
+          { "id": "A", "content": "Add the two trips for one day, then multiply by 5 days", "isCorrect": true },
+          { "id": "B", "content": "Subtract the return trip from the first trip, then multiply", "isCorrect": false },
+          { "id": "C", "content": "Divide 5 by 3/4 because there are five days", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What should the final answer represent?",
+        "options": [
+          { "id": "A", "content": "The total miles Lena walks over all 5 days", "isCorrect": true },
+          { "id": "B", "content": "The miles in one direction only", "isCorrect": false },
+          { "id": "C", "content": "The number of times Lena walks to the park", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q44": {
+    "keywords": [
+      { "phrase": "area and perimeter", "operation": "measurement", "rationale": "The problem is asking for two measurement formulas using the same rectangle dimensions." },
+      { "phrase": "length 14 and width 6", "operation": "multiplication", "rationale": "Area uses multiplication of length and width, while perimeter uses addition around the shape." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values belong in the formulas?",
+        "options": [
+          { "id": "A", "content": "Length 14 and width 6", "isCorrect": true },
+          { "id": "B", "content": "Area 20 and perimeter 84", "isCorrect": false },
+          { "id": "C", "content": "14, 6, and 20 because 14 + 6 = 20", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What operation plan matches the two measurements?",
+        "options": [
+          { "id": "A", "content": "Multiply for area and add all four sides for perimeter", "isCorrect": true },
+          { "id": "B", "content": "Add for area and multiply for perimeter", "isCorrect": false },
+          { "id": "C", "content": "Subtract width from length for both answers", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What is the problem asking you to report?",
+        "options": [
+          { "id": "A", "content": "Both the area and the perimeter of the rectangle", "isCorrect": true },
+          { "id": "B", "content": "Only the perimeter", "isCorrect": false },
+          { "id": "C", "content": "Only the area", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q45": {
+    "keywords": [
+      { "phrase": "area divided by width", "operation": "division", "rationale": "If area = length × width, then length = area ÷ width." },
+      { "phrase": "missing length", "operation": "division", "rationale": "You know the total area and one side, so divide to find the unknown side." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values help find the missing side?",
+        "options": [
+          { "id": "A", "content": "Area 72 and width 8", "isCorrect": true },
+          { "id": "B", "content": "Area 72 and length 9", "isCorrect": false },
+          { "id": "C", "content": "Width 8 and perimeter 80", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What operation finds the missing length?",
+        "options": [
+          { "id": "A", "content": "Division because 72 square units are split into rows of 8", "isCorrect": true },
+          { "id": "B", "content": "Addition because you need a larger side", "isCorrect": false },
+          { "id": "C", "content": "Subtraction because one side is unknown", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What should the answer tell you?",
+        "options": [
+          { "id": "A", "content": "The missing length of the rectangle", "isCorrect": true },
+          { "id": "B", "content": "The total area of two rectangles", "isCorrect": false },
+          { "id": "C", "content": "The width written a second time", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "q50": {
+    "keywords": [
+      { "phrase": "below 1 mile", "operation": "comparison", "rationale": "You must compare the listed distances to the 1-mile benchmark first." },
+      { "phrase": "out of 10 hikers total", "operation": "division", "rationale": "A part out of a whole is represented as a fraction or decimal of the total." }
+    ],
+    "guidedSteps": [
+      {
+        "id": "values",
+        "title": "Important values",
+        "prompt": "Which values drive the fraction you need?",
+        "options": [
+          { "id": "A", "content": "The 3 hikers below 1 mile and the 10 hikers total", "isCorrect": true },
+          { "id": "B", "content": "The 1 mile benchmark and 13 hikers", "isCorrect": false },
+          { "id": "C", "content": "Only the total of 10 hikers", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "Operation",
+        "prompt": "What math idea best matches this question?",
+        "options": [
+          { "id": "A", "content": "Form a part-to-whole fraction after counting who is below 1 mile", "isCorrect": true },
+          { "id": "B", "content": "Add every hiker's distance together", "isCorrect": false },
+          { "id": "C", "content": "Multiply 3 by 10 because both numbers appear", "isCorrect": false }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "Main question",
+        "prompt": "What does the final answer represent?",
+        "options": [
+          { "id": "A", "content": "The fraction of hikers whose distance is below 1 mile", "isCorrect": true },
+          { "id": "B", "content": "The total number of miles walked by all hikers", "isCorrect": false },
+          { "id": "C", "content": "The number of hikers who walked exactly 1 mile", "isCorrect": false }
+        ]
+      }
+    ]
+  }
+}

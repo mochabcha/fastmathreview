@@ -1,6 +1,9 @@
 'use client';
 
+import confetti from 'canvas-confetti';
+import { useEffect, useRef } from 'react';
 import { Button, Icon, Text } from '@/components/atoms';
+import { AnswerFeedbackPanel } from '@/components/molecules';
 import { QuestionWorkspace } from '../QuestionWorkspace/QuestionWorkspace';
 import { HelpDrawer } from '../HelpDrawer/HelpDrawer';
 import { ReferenceDrawer } from '../ReferenceDrawer/ReferenceDrawer';
@@ -8,6 +11,7 @@ import type {
   AssessmentMode,
   AssessmentQuestion,
   EvaluationResult,
+  GuidedStepResponseMap,
   LessonResource,
   QuestionHelpEntry,
   QuestionResponseValue,
@@ -28,6 +32,7 @@ export function AssessmentBrowser({
   references,
   isReferenceOpen,
   isHelpOpen,
+  guidedStepResponses,
   questionCount,
   currentIndex,
   scoreLabel,
@@ -35,6 +40,7 @@ export function AssessmentBrowser({
   isLastQuestion,
   onToggleReference,
   onToggleHelp,
+  onGuidedStepResponseChange,
   onPrevious,
   onNext,
   onReturnToModes,
@@ -51,6 +57,7 @@ export function AssessmentBrowser({
   references: ReferenceSheet;
   isReferenceOpen: boolean;
   isHelpOpen: boolean;
+  guidedStepResponses: GuidedStepResponseMap | undefined;
   questionCount: number;
   currentIndex: number;
   scoreLabel?: string;
@@ -58,6 +65,7 @@ export function AssessmentBrowser({
   isLastQuestion: boolean;
   onToggleReference: () => void;
   onToggleHelp: () => void;
+  onGuidedStepResponseChange: (stepId: string, optionId: string) => void;
   onPrevious: () => void;
   onNext: () => void;
   onReturnToModes: () => void;
@@ -66,6 +74,8 @@ export function AssessmentBrowser({
   const progressPercent = ((currentIndex + 1) / questionCount) * 100;
   const isPostTestReview = stage === 'results';
   const showHelpButton = mode === 'review' || isPostTestReview;
+  const previousQuestionIdRef = useRef(question.id);
+  const celebratedRef = useRef<string | null>(null);
 
   const nextLabel = isPostTestReview
     ? isLastQuestion
@@ -78,6 +88,33 @@ export function AssessmentBrowser({
       : isLastQuestion
         ? 'Grade'
         : 'Next';
+
+  useEffect(() => {
+    if (previousQuestionIdRef.current !== question.id) {
+      celebratedRef.current = null;
+      previousQuestionIdRef.current = question.id;
+    }
+  }, [question.id]);
+
+  useEffect(() => {
+    if (stage !== 'browser' || mode !== 'review' || !evaluation?.isCorrect) {
+      return;
+    }
+
+    if (celebratedRef.current === question.id) {
+      return;
+    }
+
+    celebratedRef.current = question.id;
+
+    void confetti({
+      particleCount: 120,
+      spread: 90,
+      startVelocity: 32,
+      origin: { x: 0.5, y: 0 },
+      scalar: 0.9,
+    });
+  }, [evaluation?.isCorrect, mode, question.id, stage]);
 
   return (
     <section className={styles.screen}>
@@ -106,9 +143,20 @@ export function AssessmentBrowser({
           <QuestionWorkspace
             question={question}
             response={response}
+            evaluation={evaluation}
+            questionHelp={questionHelp}
+            showReviewState={isPostTestReview}
             questionCount={questionCount}
             onResponseChange={onResponseChange}
           />
+
+          {evaluation && (isPostTestReview || !evaluation.isCorrect) ? (
+            <AnswerFeedbackPanel
+              question={question}
+              response={response}
+              evaluation={evaluation}
+            />
+          ) : null}
 
           {showHelpButton ? (
             <button type="button" className={styles.helpFab} onClick={onToggleHelp} aria-label="Open review help">
@@ -147,6 +195,8 @@ export function AssessmentBrowser({
           explanation={question.explanation}
           standard={standard}
           lessons={lessons}
+          guidedStepResponses={guidedStepResponses}
+          onGuidedStepResponseChange={onGuidedStepResponseChange}
           onClose={onToggleHelp}
         />
       ) : null}
