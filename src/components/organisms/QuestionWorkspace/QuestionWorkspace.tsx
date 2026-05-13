@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Heading, MathText, Stack, Text } from '@/components/atoms';
 import { KeywordHintText, QuestionOption, SegmentedTabs } from '@/components/molecules';
+import { areAllGuidedStepsCorrect, evaluateGuidedStep } from '@/lib/review/evaluateGuidedSteps';
 import type {
   AssessmentQuestion,
   EvaluationResult,
@@ -115,6 +116,7 @@ export function QuestionWorkspace({
   guidedStepResponses,
   isBreakdownOpen = false,
   showReviewState = false,
+  onBreakdownComplete,
   onGuidedStepResponseChange,
   onResponseChange,
 }: {
@@ -125,6 +127,7 @@ export function QuestionWorkspace({
   guidedStepResponses: GuidedStepResponseMap | undefined;
   isBreakdownOpen?: boolean;
   showReviewState?: boolean;
+  onBreakdownComplete: () => void;
   onGuidedStepResponseChange: (stepId: string, optionId: string) => void;
   onResponseChange: (nextValue: QuestionResponseValue) => void;
 }) {
@@ -138,9 +141,31 @@ export function QuestionWorkspace({
 
   const activeStep = guidedSteps.find((step) => step.id === activeStepId) ?? guidedSteps[0];
   const activeStepIndex = activeStep ? guidedSteps.findIndex((step) => step.id === activeStep.id) : -1;
+  const activeStepEvaluation = activeStep
+    ? evaluateGuidedStep(activeStep, guidedStepResponses?.[activeStep.id])
+    : null;
+  const allGuidedStepsCorrect = useMemo(
+    () => areAllGuidedStepsCorrect(guidedSteps, guidedStepResponses),
+    [guidedStepResponses, guidedSteps],
+  );
+
+  useEffect(() => {
+    if (!isBreakdownOpen || !allGuidedStepsCorrect) {
+      return;
+    }
+
+    onBreakdownComplete();
+  }, [allGuidedStepsCorrect, isBreakdownOpen, onBreakdownComplete]);
 
   function handleGuidedStepResponse(stepId: string, optionId: string) {
     onGuidedStepResponseChange(stepId, optionId);
+
+    const step = guidedSteps.find((item) => item.id === stepId);
+    const selectedOption = step?.options.find((option) => option.id === optionId);
+
+    if (!step || !selectedOption?.isCorrect) {
+      return;
+    }
 
     const stepIndex = guidedSteps.findIndex((step) => step.id === stepId);
     const nextStep = guidedSteps[stepIndex + 1];
@@ -189,6 +214,15 @@ export function QuestionWorkspace({
               items={guidedSteps.map((step, index) => ({
                 id: step.id,
                 label: `Step ${index + 1}`,
+                tone: (() => {
+                  const evaluation = evaluateGuidedStep(step, guidedStepResponses?.[step.id]);
+
+                  if (!evaluation.isAnswered) {
+                    return 'default';
+                  }
+
+                  return evaluation.isCorrect ? 'correct' : 'incorrect';
+                })(),
               }))}
               activeId={activeStep.id}
               onChange={setActiveStepId}
@@ -205,10 +239,47 @@ export function QuestionWorkspace({
                     label={option.id}
                     content={option.content}
                     selected={guidedStepResponses?.[activeStep.id] === option.id}
+                    reviewState={
+                      activeStepEvaluation?.isAnswered
+                        ? option.isCorrect
+                          ? 'correct'
+                          : guidedStepResponses?.[activeStep.id] === option.id
+                            ? 'incorrect'
+                            : 'neutral'
+                        : 'neutral'
+                    }
                     onClick={() => handleGuidedStepResponse(activeStep.id, option.id)}
                   />
                 ))}
               </Stack>
+
+              {activeStepEvaluation?.isAnswered ? (
+                <div
+                  className={
+                    activeStepEvaluation.isCorrect
+                      ? `${styles.breakdownFeedback} ${styles.breakdownFeedbackCorrect}`
+                      : `${styles.breakdownFeedback} ${styles.breakdownFeedbackIncorrect}`
+                  }
+                >
+                  <Text as="span" className={styles.breakdownFeedbackTitle}>
+                    {activeStepEvaluation.isCorrect ? 'Correct.' : 'Not yet.'}
+                  </Text>
+                  <div className={styles.breakdownFeedbackBody}>
+                    <Text as="span">The right answer is {activeStepEvaluation.correctOption.id}: </Text>
+                    <span className={styles.breakdownFeedbackAnswer}>
+                      <MathText text={activeStepEvaluation.correctOption.content} />
+                    </span>
+                  </div>
+                  <Text as="span" tone="soft" className={styles.breakdownFeedbackBody}>
+                    {activeStepEvaluation.explanation}
+                  </Text>
+                  {!activeStepEvaluation.isCorrect ? (
+                    <Text as="span" tone="soft" className={styles.breakdownFeedbackHint}>
+                      Choose the correct step answer to move forward.
+                    </Text>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </section>
         ) : null}

@@ -60,6 +60,7 @@ export interface GuidedStepOption {
   id: string;
   content: string;
   isCorrect: boolean;
+  explanation?: string;
 }
 
 export interface GuidedStepPrompt {
@@ -90,6 +91,46 @@ export interface OperationKeywordCatalog {
   multiplication: KeywordCatalogEntry[];
   division: KeywordCatalogEntry[];
   equalGroups: KeywordCatalogEntry[];
+}
+
+export interface QuestionTemplateParameter {
+  id: string;
+  label: string;
+  type: 'integer' | 'decimal' | 'text';
+  example: string;
+  notes?: string;
+}
+
+export interface QuestionTemplateChoice {
+  id: string;
+  contentTemplate: string;
+  isCorrect: boolean;
+  rationale: string;
+}
+
+export interface GuidedStepTemplate {
+  id: string;
+  title: string;
+  promptTemplate: string;
+  explanationTemplate: string;
+}
+
+export interface QuestionFormatTemplate {
+  id: string;
+  title: string;
+  standardIds: string[];
+  answerType: 'single' | 'multi' | 'value';
+  operationFocus: 'addition' | 'subtraction' | 'multiplication' | 'division' | 'mixed' | 'measurement';
+  promptTemplate: string;
+  answerLabel?: string;
+  answerDisplayTemplate: string;
+  explanationTemplate: string;
+  mathSetupTemplate: string;
+  translationTemplate: string;
+  parameters: QuestionTemplateParameter[];
+  choiceTemplates?: QuestionTemplateChoice[];
+  guidedStepTemplates: GuidedStepTemplate[];
+  authorNotes: string[];
 }
 
 export interface ChoiceOption {

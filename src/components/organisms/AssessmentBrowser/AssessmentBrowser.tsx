@@ -162,6 +162,7 @@ export function AssessmentBrowser({
             guidedStepResponses={guidedStepResponses}
             isBreakdownOpen={isBreakdownOpen}
             showReviewState={isPostTestReview}
+            onBreakdownComplete={() => setIsBreakdownOpen(false)}
             onGuidedStepResponseChange={onGuidedStepResponseChange}
             onResponseChange={onResponseChange}
           />

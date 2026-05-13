@@ -6,6 +6,7 @@ import styles from './SegmentedTabs.module.css';
 interface SegmentedTabItem {
   id: string;
   label: string;
+  tone?: 'default' | 'correct' | 'incorrect';
 }
 
 export function SegmentedTabs({
@@ -27,7 +28,12 @@ export function SegmentedTabs({
           type="button"
           role="tab"
           aria-selected={item.id === activeId}
-          className={cx(styles.tab, item.id === activeId && styles.active)}
+          className={cx(
+            styles.tab,
+            item.tone === 'correct' && styles.correct,
+            item.tone === 'incorrect' && styles.incorrect,
+            item.id === activeId && styles.active,
+          )}
           onClick={() => onChange(item.id)}
         >
           {item.label}

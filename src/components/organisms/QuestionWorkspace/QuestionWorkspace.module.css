@@ -78,6 +78,38 @@
   min-width: 0;
 }
 
+.breakdownFeedback {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in oklab, var(--color-border) 80%, white);
+}
+
+.breakdownFeedbackCorrect {
+  background: color-mix(in oklab, var(--color-success) 14%, white);
+  border-color: color-mix(in oklab, var(--color-success) 40%, white);
+}
+
+.breakdownFeedbackIncorrect {
+  background: color-mix(in oklab, var(--color-danger) 12%, white);
+  border-color: color-mix(in oklab, var(--color-danger) 38%, white);
+}
+
+.breakdownFeedbackTitle {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.breakdownFeedbackBody,
+.breakdownFeedbackHint {
+  line-height: 1.42;
+}
+
+.breakdownFeedbackAnswer {
+  font-weight: 800;
+}
+
 .responsePanel {
   min-height: 0;
 }

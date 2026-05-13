@@ -35,3 +35,15 @@
   border-color: color-mix(in oklab, var(--color-accent-strong) 60%, white);
   color: var(--color-ink);
 }
+
+.correct {
+  border-color: color-mix(in oklab, var(--color-success) 42%, white);
+  background: color-mix(in oklab, var(--color-success) 14%, white);
+  color: var(--color-ink);
+}
+
+.incorrect {
+  border-color: color-mix(in oklab, var(--color-danger) 42%, white);
+  background: color-mix(in oklab, var(--color-danger) 14%, white);
+  color: var(--color-ink);
+}

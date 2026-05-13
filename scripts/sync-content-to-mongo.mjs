@@ -5,6 +5,7 @@ import problemSupport from '../src/content/review/grade4-fast-problem-support.js
 import operationKeywords from '../src/content/review/grade4-fast-operation-keywords.json' with { type: 'json' };
 import references from '../src/content/reference/grade4-fast-reference.json' with { type: 'json' };
 import standards from '../src/content/standards/grade4-fast-standards.json' with { type: 'json' };
+import questionTemplates from '../src/content/templates/grade4-fast-question-formats.json' with { type: 'json' };
 
 const mongoUri = process.env.MONGODB_URI;
 const databaseName = process.env.MONGODB_DB || 'fastmathreview';
@@ -20,6 +21,7 @@ const contentDocuments = [
   { key: 'question-help:grade4-fast-question-help', value: questionHelp },
   { key: 'problem-support:grade4-fast-problem-support', value: problemSupport },
   { key: 'keyword-catalog:grade4-fast-operation-keywords', value: operationKeywords },
+  { key: 'question-templates:grade4-fast-question-formats', value: questionTemplates },
 ];
 
 const client = new MongoClient(mongoUri);

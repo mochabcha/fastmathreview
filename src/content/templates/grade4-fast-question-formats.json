@@ -1,0 +1,226 @@
+[
+  {
+    "id": "equal-groups-total-unknown",
+    "title": "Equal Groups Total Unknown",
+    "standardIds": ["MA.4.AR.2.1", "MA.4.AR.2.2"],
+    "answerType": "single",
+    "operationFocus": "multiplication",
+    "promptTemplate": "{{subject}} places {{groupSize}} {{itemLabel}} in each {{groupLabel}}. There are {{groupCount}} {{groupLabelPlural}}. How many {{itemLabelPlural}} are there altogether?",
+    "answerDisplayTemplate": "{{product}}",
+    "explanationTemplate": "This is an equal-groups multiplication problem. Multiply {{groupSize}} × {{groupCount}} to find the total number of {{itemLabelPlural}}.",
+    "mathSetupTemplate": "Treat the problem as {{groupCount}} equal groups of {{groupSize}} {{itemLabelPlural}}.",
+    "translationTemplate": "Multiply {{groupSize}} × {{groupCount}}.",
+    "parameters": [
+      { "id": "subject", "label": "Story subject", "type": "text", "example": "A bakery" },
+      { "id": "groupSize", "label": "Items per group", "type": "integer", "example": "24" },
+      { "id": "itemLabel", "label": "Single item label", "type": "text", "example": "muffin" },
+      { "id": "itemLabelPlural", "label": "Plural item label", "type": "text", "example": "muffins" },
+      { "id": "groupLabel", "label": "Single group label", "type": "text", "example": "tray" },
+      { "id": "groupLabelPlural", "label": "Plural group label", "type": "text", "example": "trays" },
+      { "id": "groupCount", "label": "Number of groups", "type": "integer", "example": "36" },
+      { "id": "product", "label": "Correct total", "type": "integer", "example": "864" }
+    ],
+    "choiceTemplates": [
+      { "id": "A", "contentTemplate": "{{groupSize + groupCount}}", "isCorrect": false, "rationale": "Adds the values instead of multiplying equal groups." },
+      { "id": "B", "contentTemplate": "{{product}}", "isCorrect": true, "rationale": "Correct multiplication total." },
+      { "id": "C", "contentTemplate": "{{groupCount - groupSize}}", "isCorrect": false, "rationale": "Subtracts instead of finding the total across groups." }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which values belong in the setup for this equal-groups problem?", "explanationTemplate": "Use {{groupSize}} and {{groupCount}} because those are the two quantities the story gives you." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "What operation should you use first?", "explanationTemplate": "Use multiplication because {{groupSize}} is repeated in each of the {{groupCount}} groups." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What is the problem asking you to find?", "explanationTemplate": "Find the total number of {{itemLabelPlural}} altogether." }
+    ],
+    "authorNotes": [
+      "Best for arrays, trays, rows, teams, packs, and repeated equal sets.",
+      "Distractors should include addition and subtraction errors that look plausible to fourth graders."
+    ]
+  },
+  {
+    "id": "equal-groups-group-size-unknown",
+    "title": "Equal Groups Group Size Unknown",
+    "standardIds": ["MA.4.AR.2.2"],
+    "answerType": "single",
+    "operationFocus": "division",
+    "promptTemplate": "{{groupCount}} {{groupLabelPlural}} share {{total}} {{itemLabelPlural}} equally. How many {{itemLabelPlural}} are in each {{groupLabel}}?",
+    "answerDisplayTemplate": "{{quotient}}",
+    "explanationTemplate": "This is a division problem because a total of {{total}} is shared equally into {{groupCount}} groups. Divide {{total}} ÷ {{groupCount}}.",
+    "mathSetupTemplate": "Use equal sharing with {{total}} split into {{groupCount}} equal groups.",
+    "translationTemplate": "Divide {{total}} ÷ {{groupCount}}.",
+    "parameters": [
+      { "id": "groupCount", "label": "Number of groups", "type": "integer", "example": "6" },
+      { "id": "groupLabel", "label": "Single group label", "type": "text", "example": "box" },
+      { "id": "groupLabelPlural", "label": "Plural group label", "type": "text", "example": "boxes" },
+      { "id": "total", "label": "Total amount", "type": "integer", "example": "1386" },
+      { "id": "itemLabelPlural", "label": "Plural item label", "type": "text", "example": "pencils" },
+      { "id": "quotient", "label": "Correct quotient", "type": "integer", "example": "231" }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which total and group count belong in the number sentence?", "explanationTemplate": "The total is {{total}} and it is shared into {{groupCount}} equal groups." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "Which operation matches equal sharing?", "explanationTemplate": "Division is correct because you are finding the amount in each group." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What does the answer represent?", "explanationTemplate": "The answer tells how many {{itemLabelPlural}} go in each {{groupLabel}}." }
+    ],
+    "authorNotes": [
+      "Use when the total and number of groups are known, but the amount in each group is unknown."
+    ]
+  },
+  {
+    "id": "equal-groups-number-of-groups-unknown",
+    "title": "Equal Groups Number of Groups Unknown",
+    "standardIds": ["MA.4.AR.2.2"],
+    "answerType": "single",
+    "operationFocus": "division",
+    "promptTemplate": "{{total}} {{itemLabelPlural}} are packed in groups of {{groupSize}}. How many {{groupLabelPlural}} can be filled?",
+    "answerDisplayTemplate": "{{quotient}} remainder {{remainder}}",
+    "explanationTemplate": "Divide {{total}} by {{groupSize}} because you know the total and the size of each group. Then interpret the remainder based on the story.",
+    "mathSetupTemplate": "Treat the problem as repeated groups of {{groupSize}} taken from a total of {{total}}.",
+    "translationTemplate": "Compute {{total}} ÷ {{groupSize}} and use the remainder to answer the story question.",
+    "parameters": [
+      { "id": "total", "label": "Total amount", "type": "integer", "example": "197" },
+      { "id": "itemLabelPlural", "label": "Plural item label", "type": "text", "example": "students" },
+      { "id": "groupSize", "label": "Group size", "type": "integer", "example": "8" },
+      { "id": "groupLabelPlural", "label": "Plural group label", "type": "text", "example": "buses" },
+      { "id": "quotient", "label": "Whole number quotient", "type": "integer", "example": "24" },
+      { "id": "remainder", "label": "Remainder", "type": "integer", "example": "5" }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which total and group size matter here?", "explanationTemplate": "Use {{total}} and {{groupSize}} because the story gives the whole amount and the size of one group." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "Which operation finds how many groups are needed?", "explanationTemplate": "Division finds the number of groups when you know the total and the amount in each group." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What must you decide after dividing?", "explanationTemplate": "You must decide how the remainder affects the story. Sometimes the remainder means another group is needed." }
+    ],
+    "authorNotes": [
+      "Use for buses, bags, boxes, teams, or seating problems where remainders matter."
+    ]
+  },
+  {
+    "id": "decimal-combine-total",
+    "title": "Decimal Combine Total",
+    "standardIds": ["MA.4.NSO.2.4"],
+    "answerType": "single",
+    "operationFocus": "addition",
+    "promptTemplate": "{{subject}} buys one item for ${{amountA}} and another for ${{amountB}}. What is the total cost?",
+    "answerDisplayTemplate": "${{sum}}",
+    "explanationTemplate": "Add the two decimal amounts because the question asks for the total cost.",
+    "mathSetupTemplate": "Line up the decimal points and add both amounts.",
+    "translationTemplate": "${{amountA}} + ${{amountB}}",
+    "parameters": [
+      { "id": "subject", "label": "Story subject", "type": "text", "example": "A student" },
+      { "id": "amountA", "label": "First amount", "type": "decimal", "example": "18.45" },
+      { "id": "amountB", "label": "Second amount", "type": "decimal", "example": "7.38" },
+      { "id": "sum", "label": "Correct total", "type": "decimal", "example": "25.83" }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which money amounts should be added?", "explanationTemplate": "Use ${{amountA}} and ${{amountB}} because those are the two prices in the story." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "What operation finds the total cost?", "explanationTemplate": "Addition is correct because the question asks for the total amount together." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What does the answer represent?", "explanationTemplate": "The answer is the total cost of both items together." }
+    ],
+    "authorNotes": [
+      "Keep decimal places aligned and use money contexts for grade 4 relevance."
+    ]
+  },
+  {
+    "id": "decimal-change-from-payment",
+    "title": "Decimal Change From Payment",
+    "standardIds": ["MA.4.NSO.2.4"],
+    "answerType": "single",
+    "operationFocus": "subtraction",
+    "promptTemplate": "{{subject}} spends ${{costA}} and ${{costB}}, then pays with ${{payment}}. How much change should {{subjectPronoun}} get back?",
+    "answerDisplayTemplate": "${{change}}",
+    "explanationTemplate": "First add the costs, then subtract that total from the payment amount to find the change.",
+    "mathSetupTemplate": "Find the total spent first, then subtract from the amount paid.",
+    "translationTemplate": "(${{costA}} + ${{costB}}) subtracted from ${{payment}}",
+    "parameters": [
+      { "id": "subject", "label": "Story subject", "type": "text", "example": "Jordan" },
+      { "id": "subjectPronoun", "label": "Pronoun", "type": "text", "example": "Jordan" },
+      { "id": "costA", "label": "First cost", "type": "decimal", "example": "6.75" },
+      { "id": "costB", "label": "Second cost", "type": "decimal", "example": "1.89" },
+      { "id": "payment", "label": "Amount paid", "type": "decimal", "example": "10.00" },
+      { "id": "change", "label": "Correct change", "type": "decimal", "example": "1.36" }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which numbers are the costs and which number is the payment?", "explanationTemplate": "Use ${{costA}} and ${{costB}} as the costs, then compare that total to the payment of ${{payment}}." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "What operation finds the change after the total cost is known?", "explanationTemplate": "Subtraction finds what is left after paying for the items." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What does the final answer show?", "explanationTemplate": "The final answer is the amount of change returned after the purchase." }
+    ],
+    "authorNotes": [
+      "This is a two-step word problem: add first, subtract second."
+    ]
+  },
+  {
+    "id": "measurement-conversion",
+    "title": "Customary Measurement Conversion",
+    "standardIds": ["MA.4.M.1.2"],
+    "answerType": "single",
+    "operationFocus": "measurement",
+    "promptTemplate": "{{quantity}} {{fromUnitPlural}} equals how many {{toUnitPlural}}?",
+    "answerDisplayTemplate": "{{convertedValue}} {{toUnitPlural}}",
+    "explanationTemplate": "Use the conversion fact {{conversionFact}} and multiply or divide based on the direction of the conversion.",
+    "mathSetupTemplate": "Write the unit conversion first, then scale the amount.",
+    "translationTemplate": "{{quantity}} × or ÷ the conversion fact {{conversionFact}}",
+    "parameters": [
+      { "id": "quantity", "label": "Starting quantity", "type": "integer", "example": "4" },
+      { "id": "fromUnitPlural", "label": "Starting unit", "type": "text", "example": "yards" },
+      { "id": "toUnitPlural", "label": "Target unit", "type": "text", "example": "feet" },
+      { "id": "conversionFact", "label": "Conversion fact", "type": "text", "example": "1 yard = 3 feet" },
+      { "id": "convertedValue", "label": "Converted amount", "type": "integer", "example": "12" }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which quantity and conversion fact matter here?", "explanationTemplate": "Use {{quantity}} and the fact {{conversionFact}} because those are the values needed for the conversion." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "Should you multiply or divide?", "explanationTemplate": "Choose the operation that moves from the starting unit to the target unit using the conversion fact." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What should the answer name?", "explanationTemplate": "The answer must be written in {{toUnitPlural}}, not the original units." }
+    ],
+    "authorNotes": [
+      "Use only grade 4 customary conversions already on the reference sheet."
+    ]
+  },
+  {
+    "id": "rectangle-area-perimeter",
+    "title": "Rectangle Area and Perimeter",
+    "standardIds": ["MA.4.GR.2.1"],
+    "answerType": "single",
+    "operationFocus": "measurement",
+    "promptTemplate": "A rectangle has a length of {{length}} {{unitPlural}} and a width of {{width}} {{unitPlural}}. Which answer gives both its area and perimeter?",
+    "answerDisplayTemplate": "Area {{area}} square {{unitPlural}}; perimeter {{perimeter}} {{unitPlural}}",
+    "explanationTemplate": "Area is length × width, and perimeter is length + length + width + width.",
+    "mathSetupTemplate": "Use both rectangle formulas with the same length and width values.",
+    "translationTemplate": "Area = {{length}} × {{width}} and perimeter = {{length}} + {{length}} + {{width}} + {{width}}",
+    "parameters": [
+      { "id": "length", "label": "Length", "type": "integer", "example": "14" },
+      { "id": "width", "label": "Width", "type": "integer", "example": "6" },
+      { "id": "unitPlural", "label": "Unit label", "type": "text", "example": "feet" },
+      { "id": "area", "label": "Correct area", "type": "integer", "example": "84" },
+      { "id": "perimeter", "label": "Correct perimeter", "type": "integer", "example": "40" }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which side lengths will you use in both formulas?", "explanationTemplate": "Use length {{length}} and width {{width}} in both the area and perimeter calculations." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "What operation gives the area first?", "explanationTemplate": "Area uses multiplication because it counts equal rows and columns of square units." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What must the correct answer include?", "explanationTemplate": "The correct choice must include both the area and the perimeter, not just one measurement." }
+    ],
+    "authorNotes": [
+      "Good distractors swap area and perimeter or compute only one of them correctly."
+    ]
+  },
+  {
+    "id": "angle-part-whole",
+    "title": "Angle Part-Whole Relationship",
+    "standardIds": ["MA.4.GR.1.2"],
+    "answerType": "single",
+    "operationFocus": "measurement",
+    "promptTemplate": "A {{wholeAngle}}-degree angle is split into two angles. One angle is {{knownPart}} degrees. Which equation finds x, the other angle?",
+    "answerDisplayTemplate": "x + {{knownPart}} = {{wholeAngle}}",
+    "explanationTemplate": "The two parts add to the whole angle, so use a part + part = whole equation.",
+    "mathSetupTemplate": "Treat the unknown angle and known angle as two parts of the same whole angle.",
+    "translationTemplate": "x + {{knownPart}} = {{wholeAngle}}",
+    "parameters": [
+      { "id": "wholeAngle", "label": "Whole angle", "type": "integer", "example": "140" },
+      { "id": "knownPart", "label": "Known part", "type": "integer", "example": "65" }
+    ],
+    "guidedStepTemplates": [
+      { "id": "values", "title": "Important values", "promptTemplate": "Which angle measures belong in the equation?", "explanationTemplate": "Use the whole angle of {{wholeAngle}} degrees and the known part of {{knownPart}} degrees." },
+      { "id": "operation", "title": "Operation", "promptTemplate": "How are the parts related to the whole angle?", "explanationTemplate": "The angle parts add together to make the whole angle." },
+      { "id": "question", "title": "Main question", "promptTemplate": "What does x represent?", "explanationTemplate": "x is the missing part of the whole angle." }
+    ],
+    "authorNotes": [
+      "Useful for equation-writing and angle-decomposition items."
+    ]
+  }
+]
